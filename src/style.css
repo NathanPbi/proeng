@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap');
 
 .logo {
-    height: 180px;
-    width: 400px; 
-    margin: 10px 0;
+    height: 85px;
+    width: 200px;   
+    margin-right: 20%;
+}
+.text-logo {
+    color: #262323;
+    font-family: 'Red rose', sans-serif;
+
 }
 
 .navbar-nav {
@@ -19,12 +24,13 @@
 .nav-link {
     border-radius: 5px;
     padding: 10px 15px;
-    background: #f0f0f0; /* Cor de fundo leve antes do hover */
-    background: linear-gradient(135deg, #f5f5f5, #eaeaea); /* Gradiente leve */
-    transition: background 0.3s ease, color 0.3s ease; /* Suaviza a transição */
+    background: #f0f0f0; 
+    background: linear-gradient(135deg, #f5f5f5, #eaeaea);
+    transition: background ease, color 0.3s ease; 
+    color: #0e0d0d; 
 }
 
 .nav-link:hover {
-    color: #0e0d0d;
-    background: linear-gradient(135deg, #ec3434, #f87575); /* Gradiente no hover */
+    color: white !important;
+    background: linear-gradient(135deg, #ec3434, #f87575);
 }
