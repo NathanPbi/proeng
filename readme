@@ -4,7 +4,12 @@ cd proeng
 yarn install
 ou
 npm install
-
+php
 gulp
 
-npx live-server
+<!-- Run project -->
+gulp
+
+Em outra aba do terminal
+
+php -S localhost:3000  ou outra porta qualquer
