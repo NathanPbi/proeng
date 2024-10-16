@@ -68,7 +68,7 @@
     text-align: center;
     margin-top: 150px;
     position: relative;
-    background-image: url('/src/assets/img/headline.jpeg');
+    background-image: url('/dist/assets/img/headline.jpeg');
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
