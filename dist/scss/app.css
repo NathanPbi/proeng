@@ -68,30 +68,30 @@
     text-align: center;
     margin-top: 150px;
     position: relative;
-    background-image: url('/src/assets/img/headline.jpeg'); /* Adiciona a imagem de fundo */
-    background-size: cover; /* Faz a imagem cobrir toda a área */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Não repete a imagem */
+    background-image: url('/src/assets/img/headline.jpeg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* Posiciona o conteúdo no final da seção */
+    align-items: flex-end; 
 }
 
 .section-2::before {
     content: "";
     position: absolute;
-    bottom: 0; /* Coloca o gradiente no fundo da seção */
+    bottom: 0; 
     left: 0;
     width: 100%;
-    height: 50%; /* Define a altura do gradiente */
-    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5)); /* Gradiente leve */
-    z-index: 1; /* Garante que o gradiente fique acima da imagem */
+    height: 50%; 
+    background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5)); 
+    z-index: 1; 
 }
 
 .headline-text {
     position: absolute;
-    bottom: 20%; /* Ajuste para mudar a altura do texto */
+    bottom: 20%; 
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 2;
@@ -102,7 +102,7 @@
 .headline-text h1 {
     font-size: 24px;
     margin-top: 20px;
-    color: white; /* Destaca o texto */
+    color: white; 
 }
 
 
@@ -132,26 +132,20 @@
 }
 
 
-/* Ajustes para mobile */
 @media (max-width: 768px) {
     .text-headline.overlay-text {
         top: 80%;
-        /* Ajusta para que o texto não fique muito no meio */
         left: 50%;
         transform: translate(-50%, -50%);
         width: 90%;
-        /* Usa porcentagem para melhor responsividade */
         padding: 20px;
-        /* Ajusta o padding */
     }
 
     .text-headline.overlay-text h1 {
         font-size: 2rem;
-        /* Tamanho adequado para mobile */
     }
 
     .text-headline.overlay-text p {
         font-size: 1rem;
-        /* Ajusta o tamanho do texto */
     }
 }
