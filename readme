@@ -1,0 +1,10 @@
+git clone https://github.com/seu-usuario/proeng.git
+cd proeng
+
+yarn install
+ou
+npm install
+
+gulp
+
+npx live-server
