@@ -3,21 +3,18 @@ const sass = require('gulp-sass')(require('sass'));
 const { series, watch } = gulp;
 
 const paths = {
-  scss: 'dist/scss/app.scss', // Arquivo SCSS principal
-  css: 'dist/css/'             // Destino do CSS compilado
+  scss: 'dist/scss/**/*.scss',  // Monitorar todos os arquivos SCSS
+  css: 'dist/css/'              // Salvar o CSS compilado aqui
 };
 
-// Função para compilar SCSS para CSS
 function compileSass() {
-  return gulp.src(paths.scss) // Usando gulp.src para pegar o arquivo SCSS
-    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError)) // Compilando o SCSS
-    .pipe(gulp.dest(paths.css)); // Salvando o CSS compilado
+  return gulp.src(paths.scss, { allowEmpty: true })  // Permitir arquivos vazios
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError)) // Compilar SCSS
+    .pipe(gulp.dest(paths.css));  // Salvar CSS
 }
 
-// Função para monitorar alterações
 function watchFiles() {
-  watch('dist/scss/**/*.scss', compileSass); // Observa mudanças em todos os arquivos SCSS
+  watch(paths.scss, compileSass);  // Monitorar alterações nos arquivos SCSS
 }
 
-// Tarefa padrão
 exports.default = series(compileSass, watchFiles);
