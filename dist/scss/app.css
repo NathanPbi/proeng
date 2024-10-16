@@ -1,25 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap');
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    font-family: 'Red Rose', sans-serif;
-}
-
-.page {
-    background: rgba(255, 255, 255, 0.089);
-    height: 100%;
-}
-
 .logo {
     max-width: 430px;
     margin-bottom: bet;
     height: auto;
     margin-right: 30px;
 }
-
 
 .header {
     background-color: transparent;
@@ -31,14 +16,8 @@ html {
     width: 100%;
     z-index: 1000;
 }
-
-.navbar-nav .nav-link {
-    color: #555;
-    transition: color 0.3s ease;
-}
-
 .header.scrolled {
-    box-shadow: 0px 4px 6px rgba(246, 244, 244, 0.224);
+
     background-color: rgba(230, 230, 230, 0.716);
 }
 
