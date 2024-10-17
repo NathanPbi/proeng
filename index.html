@@ -7,70 +7,70 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./dist/scss/app.css">
     <link rel="shortcut icon" href="./dist/assets/img/favicon.png" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>PROeng</title>
 </head>
 
 <body class="page">
 
     <header class="header">
-        <a href="">
-            <img src="/dist/assets/img/logo-2.png" alt="Logo"
-                class="logo img-fluid d-flex justify-content-center d-none w-100">
-        </a>
-        </div>
-        <nav class="navbar navbar-expand-lg">
-            <button class="navbar-toggler menu-icon" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-flex justify-content-start" id="navbarNav">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <ul class="navbar-nav d-flex justify-content-center d-none w-100">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#section-1">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#section-2">Quem somos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Nossos serviços</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Nossos clientes</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contato</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="">
+                <img src="/dist/assets/img/logo-2.png" alt="Logo" class="logo img-fluid">
+            </a>
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler menu-icon" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto"> <!-- Mudança aqui -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section-1">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section-2">Nossa história</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section-3">Nossos serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nossos clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contato</a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </nav>
-
+            </nav>
+        </div>
     </header>
+    
 
-    <div id="section-1" class="section-1">
+    <div class="section-1" id="section-1">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="text-headline overlay-text text-center py-5">
                         <h1>Seja muito bem-vindo(a)!</h1>
-                        <p>A PROeng oferece soluções completas em Consultoria e Projetos Elétricos,<br>
-                            garantindo qualidade e segurança em cada detalhe do seu projeto.</p>
+                        <p>A PROeng oferece soluções completas em <br><span class="bg-danger">Consultoria e Projetos
+                                Elétricos</span>,<br>
+                            garantindo qualidade e segurança em cada detalhe <br>do seu projeto.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div id="section-2" class="section-2">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="bg-danger text-white px-2 py-2 d-inline-block">Quem somos</h1>
+    <div id="section-2" class="section-2 py-5">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-start">
+                <div class="col-auto">
+                    <h1 id="history" class="bg-danger text-white px-4 py-2 text-center d-inline-block">
+                        Nossa história
+                        <div class="line-with-icon">
+                            <span><i class="fas fa-bolt"></i></span>
+                        </div>
+                    </h1>
                 </div>
                 <div class="container">
                     <div class="row">
@@ -100,6 +100,42 @@
                                 entregas geradoras de valor entre contratantes e contratado.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-3" class="section-3 section-3-adjust py-2">
+            <div class="overlay"></div>
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center">
+                    <div class="col-auto">
+                        <h1 class="bg-danger text-white px-4 py-2 text-center d-inline-block">
+                            Nossos serviços
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <p class="text-white">
+                            Oferecemos soluções completas para atender suas necessidades.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+            <div class="col-md-4">
+                <div class="service-box p-4 text-center bg-white rounded shadow">
+                    <h3>Consultoria</h3>
+                    <p>Ajudamos a encontrar as melhores estratégias para o seu negócio.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-box p-4 text-center bg-white rounded shadow">
+                    <h3>Desenvolvimento</h3>
+                    <p>Criamos soluções personalizadas para transformar sua ideia em realidade.</p>
                 </div>
             </div>
         </div>
