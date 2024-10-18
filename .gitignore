@@ -17,6 +17,8 @@ yarn-error.log*
 !dist/scss/  # Não ignorar a pasta SCSS
 
 # Ignorar editor e sistema
+.firebase
+firebase.json
 .vscode/
 .idea/
 .DS_Store

@@ -5,7 +5,9 @@
   "repository": "https://github.com/NathanPbi/proeng.git",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "5.3.3"
+    "bootstrap": "5.3.3",
+    "cli": "^1.0.1",
+    "firebase": "^10.14.1"
   },
   "devDependencies": {
     "gulp": "^5.0.0",
