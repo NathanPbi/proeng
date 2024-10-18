@@ -18,6 +18,7 @@ yarn-error.log*
 
 # Ignorar editor e sistema
 .firebase
+.firebaserc
 firebase.json
 .vscode/
 .idea/
