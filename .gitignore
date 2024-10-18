@@ -17,6 +17,7 @@ yarn-error.log*
 !dist/scss/  # Não ignorar a pasta SCSS
 
 # Ignorar editor e sistema
+gulpfile.js
 .firebase
 .firebaserc
 firebase.json
