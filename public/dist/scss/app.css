@@ -136,7 +136,7 @@
     top: 60px;
     width: 100%;
     height: 100%;
-    background-image: url('/dist/assets/img/headline.jpeg');
+    background-image: url('/public/dist/assets/img/headline.jpeg');
     background-size: cover;
     background-position: center; 
     background-repeat: no-repeat; 
@@ -156,12 +156,12 @@
     color: white;
 }
 
-.section-1 img {
-    background-image: url('/src/assets/img/headline.jpeg');
+/* .section-1 img {
+    background-image: url('/public/assets/img/headline.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+} */
 .text-headline.overlay-text {
     position: absolute;
     top: 20%;
@@ -188,7 +188,7 @@
 
  .section-3 {
     position: relative;
-    background-image: url('/dist/assets/img/bg-media.jpg');
+    background-image: url('/public/dist/assets/img/bg-media.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
