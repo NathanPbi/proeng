@@ -156,12 +156,12 @@
     color: white;
 }
 
-/* .section-1 img {
-    background-image: url('/public/assets/img/headline.jpeg');
+.section-1 img {
+    background-image: url('/src/assets/img/headline.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-} */
+}
 .text-headline.overlay-text {
     position: absolute;
     top: 20%;
