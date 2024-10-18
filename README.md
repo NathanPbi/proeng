@@ -12,4 +12,6 @@ gulp
 
 Em outra aba do terminal
 
+cd public
+
 php -S localhost:3000  ou outra porta qualquer
