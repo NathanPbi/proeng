@@ -3,7 +3,7 @@ const sass = require('gulp-sass')(require('sass'));
 const { series, watch } = gulp;
 
 const paths = {
-  scss: 'public/dist/scss/**/*.scss',  // Monitorar todos os arquivos SCSS em public/dist
+  scss: 'public/dist/frontend/scss/**/*.scss',  // Monitorar todos os arquivos SCSS em public/dist
   css: 'public/dist/css/'              // Salvar o CSS compilado em public/dist/css
 };
 
