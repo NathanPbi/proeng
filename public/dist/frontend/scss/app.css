@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap');
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overscroll-behavior: contain; 
+}
 
 .bg-danger {
     color: white !important;
@@ -17,12 +24,13 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 170px;
+    height: 120px;
     width: 100%;
     z-index: 1000;
 }
 
 .logo {
+    margin: -48px;
     max-height: 100%;
     width: auto;
 }
@@ -37,6 +45,7 @@
 }
 
 .navbar {
+    bottom: 9px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +70,7 @@
 .navbar-nav .nav-link {
     padding: 15px 20px;
     font-size: 16px;
-    color: #555;
+    color: #6a6868;
     text-decoration: none;
     transition: background 0.3s ease, color 0.3s ease;
     border: none;
@@ -80,30 +89,7 @@
     margin-left: auto; /* Move o botão para a direita */
 }
 
-.navbar-toggler-icon {
-    width: 30px; /* Largura dos traços */
-    height: 3px; /* Espessura dos traços */
-    background-color: rgb(68, 65, 65); /* Cor dos traços */
-    position: relative; /* Para posicionar os traços */
-}
-
-.navbar-toggler-icon::before,
-.navbar-toggler-icon::after {
-    content: ''; /* Cria os traços superior e inferior */
-    width: 30px; /* Largura dos traços */
-    height: 3px; /* Espessura dos traços */
-    background-color: rgb(68, 65, 65); /* Cor dos traços */
-    position: absolute; /* Posiciona os traços */
-    left: 0; /* Alinha à esquerda */
-}
-
-.navbar-toggler-icon::before {
-    top: -8px; /* Espaçamento do traço superior */
-}
-
-.navbar-toggler-icon::after {
-    bottom: -8px; /* Espaçamento do traço inferior */
-}
+/* */
 
 .section-1 {
     .bg-danger {
@@ -154,9 +140,10 @@
     overflow: hidden;
     width: 100%;
     height: 100vh;
-}
-
-.section-1 {
+    margin: 40px;
+    bottom: 10px;
+    top: 60px;
+    left: -40px;
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -165,19 +152,19 @@
 
 .section-1::before {
     content: "";
-    position: absolute;
-    top: 10px;
+    position: fixed;
+    top: 120px;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background-image: url('/dist/assets/img/headline.jpeg');
+    height: 100%; /* Preenche toda a área da seção */
+    background-image: 
+        linear-gradient(rgba(79, 74, 74, 0.5), rgba(208, 196, 196, 0.5)),
+        url('/dist/assets/img/headline.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transform: rotate(4deg);
-    transform-origin: center;
-    z-index: -1;
+    z-index: -1; /* Colocado no fundo */
 }
-
 
 
 .headline-text {
@@ -189,15 +176,9 @@
     color: white;
 }
 
-.section-1 img {
-    background-image: url('/dist/assets/img/headline.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 .text-headline.overlay-text {
-    position: absolute;
+    position: relative;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -264,6 +245,14 @@
 }
 
 @media (max-width: 768px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden; /* Evita rolagem horizontal */
+        overscroll-behavior: contain; /* Evita zoom involuntário */
+    }
     .logo {
         display: flex;
         justify-content: center;
@@ -276,6 +265,7 @@
     }
 
     .header {
+      
         display: flex;
         /* Certifique-se de que o header está em flexbox */
         justify-content: space-between;
