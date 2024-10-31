@@ -26,3 +26,19 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
     var navbarNav = document.getElementById('navbarNav');
     navbarNav.classList.toggle('show');
 });
+
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+    document.querySelector('.modal-overlay').style.display = 'block';
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+    document.querySelector('.modal-overlay').style.display = 'none';
+}
+
+// Fechar o modal ao clicar fora
+document.querySelector('.modal-overlay').addEventListener('click', function() {
+    document.querySelectorAll('.modal-centered').forEach(modal => modal.style.display = 'none');
+    this.style.display = 'none';
+});

@@ -121,49 +121,177 @@
             </div>
         </div>
 
-        <div id="section-3" class="section-3 py-4">
-            <div class="container vh-100">
+        <div id="section-3" class="section-3 py-4 v-100">
+            <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1 id="history" class="text-ligh text-center">
+                        <h1 class="text-light text-center">
                             Nossos serviços
                             <div class="line-with-icon" style="color: #A2AFBB;">
                                 <span><i class="fas fa-bolt" style="color: #A2AFBB"></i></span>
                             </div>
+                        </h1>
                     </div>
-                    </h1>
-                    <p>
-                        Projetos de Instalações Elétricas em Média Tensão
-                    </p>
+
+                    <!-- Serviço: Projetos de Instalações Elétricas em Média Tensão (modal à direita) -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 service-item" onmouseenter="showModal('modal1')"
+                        onmouseleave="hideModal('modal1')">
+                        <p class="service-title text-light">
+                            <i class="fas fa-bolt service-icon"></i> Projetos de Instalações Elétricas em Média Tensão
+                        </p>
+                        <div id="modal1" class="service-modal modal-right">
+                            <div class="modal-content">
+                               <h6> Projetos de Instalações Elétricas em Média Tensão</h6>
+                                <p>Derivação da rede;</p>
+                                <p>Ramal de entrada em média tensão;</p>
+                                <p>Cabine de medição e proteção geral;</p>
+                                <p>Redes internas de distribuição em média tensão;</p>
+                                <p>Subestações de transformação;</p>
+                                <p>Diagrama unifilar da obra e projeto dos painéis;</p>
+                                <p>Memoriais técnicos descritivos;</p>
+                                <p>Documentação para processo de aprovação junto às concessionárias;</p>
+                                <p>Aprovação de projetos nas concessionárias de energia.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Serviço: Projetos de Instalações Elétricas em Baixa Tensão (modal à esquerda) -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 service-item" onmouseenter="showModal('modal2')"
+                        onmouseleave="hideModal('modal2')">
+                        <p class="service-title text-light">
+                            <i class="fas fa-bolt service-icon"></i> Projetos de Instalações Elétricas em Baixa Tensão
+                        </p>
+                        <div id="modal2" class="service-modal modal-left">
+                            <div class="modal-content">
+                                <h6>Projetos de Instalações Elétricas em Baixa Tensão</h6>
+                                <p>Ramais alimentadores gerais;</p>
+                                <p>Circuitos terminais de Potência (Motores, Tomadas industriais, Cargas Industriais,
+                                    etc.);</p>
+                                <p>Iluminação interna e externa;</p>
+                                <p>Iluminação de emergência;</p>
+                                <p>Instrumentação e Controle;</p>
+                                <p>Redes de comunicação, Dados e CFTV;</p>
+                                <p>Aterramento e SPDA;</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Serviço: Projetos de Painéis Elétricos de Média Tensão (modal à direita) -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 service-item" onmouseenter="showModal('modal3')"
+                        onmouseleave="hideModal('modal3')">
+                        <p class="service-title text-light">
+                            <i class="fas fa-bolt service-icon"></i> Projetos de Painéis Elétricos de Média Tensão
+                        </p>
+                        <div id="modal3" class="service-modal modal-right">
+                            <div class="modal-content">
+                                <h6>Projetos de Painéis Elétricos de Média Tensão</h6>
+                                <p>Painéis de Entrada de Energia e Medição;</p>
+                                <p>Painéis de Proteção e Distribuição;</p>
+                                <p>Painéis de Proteção para Transformadores.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Serviço: Projetos de Painéis Elétricos de Baixa Tensão (modal à esquerda) -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 service-item" onmouseenter="showModal('modal4')"
+                        onmouseleave="hideModal('modal4')">
+                        <p class="service-title text-light">
+                            <i class="fas fa-bolt service-icon"></i> Projetos de Painéis Elétricos de Baixa Tensão
+                        </p>
+                        <div id="modal4" class="service-modal modal-left">
+                            <div class="modal-content">
+                                <h6>Projetos de Painéis Elétricos de Baixa Tensão</h6>
+                                <p>Quadros Gerais;</p>
+                                <p>Centro de Controle de Motores;</p>
+                                <p>Bancos de Correção do fator de potência;</p>
+                                <p>Quadros de distribuição de força e iluminação;</p>
+                                <p>Painéis de comando local;</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Serviço: Projetos e Especificações Técnicas de Automação (modal à direita) -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 service-item" onmouseenter="showModal('modal5')"
+                        onmouseleave="hideModal('modal5')">
+                        <p class="service-title text-light">
+                            <i class="fas fa-bolt service-icon"></i> Projetos e Especificações Técnicas de Automação
+                        </p>
+                        <div id="modal5" class="service-modal modal-right">
+                            <div class="modal-content">
+                                <h6>Projetos e Especificações Técnicas de Automação</h6>
+                                <p>Painéis de CLP, Remotas e IHM;</p>
+                                <p>Definição de Arquitetura de rede;</p>
+                                <p>Especificações de hardware e licenças de software;</p>
+                                <p>Serviço de desenvolvimento de software.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Serviço: Serviços de Engenharia (modal à esquerda) -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 service-item" onmouseenter="showModal('modal6')"
+                        onmouseleave="hideModal('modal6')">
+                        <p class="service-title text-light">
+                            <i class="fas fa-bolt service-icon"></i> Serviços de Engenharia
+                        </p>
+                        <div id="modal6" class="service-modal modal-left">
+                            <div class="modal-content">
+                                <h6>Serviços de Engenharia</h6>
+                                <p>Elaboração de projetos elétricos básicos de Painéis, Instalações Elétricas, Automação
+                                    e Memoriais Descritivos / Especificações Técnicas para processos de cotação;</p>
+                                <p>Apoio ao cliente na equalização de propostas técnica dos proponentes;</p>
+                                <p>Apoio ao cliente na aprovação de projetos de Painéis e Instalações elétricas;</p>
+                                <p>Elaboração de diagrama unifilar geral de unidades existentes;</p>
+                                <p>Elaboração de projetos as-built de painéis e instalações elétricas;</p>
+                                <p>Elaboração de projetos na metodologia BIM.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Serviço: Laudos Técnicos (modal à direita) -->
+                    <div class="col-lg-6 col-md-6 col-sm-12 service-item" onmouseenter="showModal('modal7')"
+                        onmouseleave="hideModal('modal7')">
+                        <p class="service-title text-light">
+                            <i class="fas fa-bolt service-icon"></i> Laudos Técnicos
+                        </p>
+                        <div id="modal7" class="service-modal modal-right">
+                            <div class="modal-content">
+                                <h6>Laudos Técnicos</h6>
+                                <p>NR-10: Segurança em Instalações e Serviços em Eletricidade;</p>
+                                <p>Relatório Técnico de Inspeção das Instalações Elétricas;</p>
+                                <p>Prontuário das Instalações Elétricas;</p>
+                                <p>Medição e inspeção de sistemas de aterramento e SPDA conforme ABNT NBR 5419;</p>
+                                <p>Laudo da estratificação do solo para projeto de aterramento e SPDA;</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
         </div>
-    </div>
-
-    <div class="row mt-3 justify-content-center">
 
 
-    </div>
-
-    <footer class="footer text-center justify-content-center py-4">
-        <p>Todos os direitos reservados</p>
-    </footer>
+        <div class="row mt-3 justify-content-center">
 
 
-    <a href="https://api.whatsapp.com/send?phone=5555991485649&text=Olá!%20Preciso%20de%20mais%20informações,%20meu%20nome%20é:"
-        class="float" aria-label="Botão para contato no WhatsApp">
-        <svg class="icon" viewBox="0 0 48 48">
-            <path
-                d="M.33,48.33,3.06,35.62A23.67,23.67,0,0,1,0,24,24.06,24.06,0,0,1,24.12,0h0a23.95,23.95,0,1,1,0,47.89,24.33,24.33,0,0,1-11-2.61ZM13.7,41.08l.67.36a20.3,20.3,0,0,0,9.74,2.49A20,20,0,1,0,4,24a19.78,19.78,0,0,0,2.89,10.3l.41.68L5.52,43Z" />
-            <path
-                d="M34.67,31.75C34.22,33,32,34.21,31,34.31S30,35.12,24.5,33s-9-7.77-9.27-8.13S13,21.92,13,19.27a6.08,6.08,0,0,1,1.89-4.5,2,2,0,0,1,1.45-.67c.36,0,.72.05,1,.05s.77-.18,1.22.9,1.54,3.72,1.67,4a1,1,0,0,1,.05.95,3.53,3.53,0,0,1-.54.89c-.28.32-.58.71-.82.95s-.55.56-.24,1.09a16.48,16.48,0,0,0,3,3.73,14.93,14.93,0,0,0,4.37,2.68c.54.26.86.22,1.17-.14s1.36-1.58,1.72-2.12.72-.45,1.22-.26,3.17,1.47,3.71,1.74.9.41,1,.63A4.4,4.4,0,0,1,34.67,31.75Z" />
-        </svg>
+        </div>
 
-    </a>
+        <footer class="footer text-center justify-content-center py-4">
+            <p>Todos os direitos reservados</p>
+        </footer>
 
 
-    </head>
+        <a href="https://api.whatsapp.com/send?phone=5555991485649&text=Olá!%20Preciso%20de%20mais%20informações,%20meu%20nome%20é:"
+            class="float" aria-label="Botão para contato no WhatsApp">
+            <svg class="icon" viewBox="0 0 48 48">
+                <path
+                    d="M.33,48.33,3.06,35.62A23.67,23.67,0,0,1,0,24,24.06,24.06,0,0,1,24.12,0h0a23.95,23.95,0,1,1,0,47.89,24.33,24.33,0,0,1-11-2.61ZM13.7,41.08l.67.36a20.3,20.3,0,0,0,9.74,2.49A20,20,0,1,0,4,24a19.78,19.78,0,0,0,2.89,10.3l.41.68L5.52,43Z" />
+                <path
+                    d="M34.67,31.75C34.22,33,32,34.21,31,34.31S30,35.12,24.5,33s-9-7.77-9.27-8.13S13,21.92,13,19.27a6.08,6.08,0,0,1,1.89-4.5,2,2,0,0,1,1.45-.67c.36,0,.72.05,1,.05s.77-.18,1.22.9,1.54,3.72,1.67,4a1,1,0,0,1,.05.95,3.53,3.53,0,0,1-.54.89c-.28.32-.58.71-.82.95s-.55.56-.24,1.09a16.48,16.48,0,0,0,3,3.73,14.93,14.93,0,0,0,4.37,2.68c.54.26.86.22,1.17-.14s1.36-1.58,1.72-2.12.72-.45,1.22-.26,3.17,1.47,3.71,1.74.9.41,1,.63A4.4,4.4,0,0,1,34.67,31.75Z" />
+            </svg>
+
+        </a>
+
+
+        </head>
 </body>
 
 </html>
