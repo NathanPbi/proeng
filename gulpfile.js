@@ -3,30 +3,18 @@ const sass = require('gulp-sass')(require('sass'));
 const { series, watch } = gulp;
 
 const paths = {
-  scss: 'public/dist/frontend/scss/**/*.scss',  // Monitorar SCSS
-  css: 'public/dist/css/'                       // Destino do CSS compilado
+  scss: 'public/dist/frontend/scss/**/*.scss',  // Monitorar todos os arquivos SCSS em public/dist
+  css: 'public/dist/css/'              // Salvar o CSS compilado em public/dist/css
 };
 
-// Função para compilar SCSS em CSS
 function compileSass() {
-  console.log('Iniciando compilação de SCSS...');
-  return gulp.src(paths.scss, { allowEmpty: true })
-    .pipe(sass({ outputStyle: 'compressed' })
-      .on('error', (err) => {
-        console.error('Erro na compilação do Sass:', err.message);
-      })
-    )
-    .pipe(gulp.dest(paths.css))
-    .on('end', () => console.log('CSS gerado com sucesso!'))
-    .on('error', (err) => console.error('Erro ao gravar o CSS:', err));
+  return gulp.src(paths.scss, { allowEmpty: true })  // Permitir arquivos vazios
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))  // Compilar SCSS
+    .pipe(gulp.dest(paths.css));  // Salvar CSS em public/dist/css
 }
 
-// Função para monitorar alterações
 function watchFiles() {
-  console.log('Monitorando alterações nos arquivos SCSS...');
-  watch(paths.scss, compileSass);
+  watch(paths.scss, compileSass);  // Monitorar alterações nos arquivos SCSS
 }
 
-// Definir as tarefas disponíveis
-exports.compileSass = compileSass;
 exports.default = series(compileSass, watchFiles);

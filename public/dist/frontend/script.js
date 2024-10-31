@@ -4,7 +4,7 @@ scriptJQuery.src = "https://code.jquery.com/jquery-3.5.1.slim.min.js";
 document.head.appendChild(scriptJQuery);
 
 const scriptPopper = document.createElement('script');
-scriptPopper.src = "https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js";
+scriptPopper.src = "https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/public/dist/umd/popper.min.js";
 document.head.appendChild(scriptPopper);
 
 const scriptBootstrap = document.createElement('script');
