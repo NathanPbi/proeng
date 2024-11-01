@@ -87,20 +87,20 @@ html, body {
     margin-top: 90px;
     margin-left: auto;
 }
-
 /* Section Styles */
 .section-1 {
     padding: 0;
     text-align: center;
-    margin-top: 128px;
+    margin-top: 240px;
     position: relative;
-    height: 100vh;
+    height: 70vh; /* Altura ajustada */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     width: 100%;
 }
+
 
 .section-1::before {
     content: "";
@@ -162,7 +162,6 @@ html, body {
 .section-2 {
     background-color: #bbb9b9;
     position: relative;
-    margin-bottom: 50px; 
 }
 
 .section-2 h1 {
