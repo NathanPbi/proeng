@@ -214,8 +214,12 @@ html, body {
     border-radius: 4.5px;
     margin-bottom: 100px;
 }
+/* Background for Title */
 .new-bg {
-    background-color: rgba(15, 1, 1, 0.535);
+    background: linear-gradient(0deg, hsl(0, 2%, 10%), hsl(0, 66%, 68%) 100%);
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: white;
 }
 
 /* Service Item */
@@ -224,12 +228,17 @@ html, body {
     display: inline-block;
     cursor: pointer;
     color: white;
+    margin-bottom: 20px;
 }
 
+/* Title Styling */
 .service-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1rem;
 }
-
+/* Icon Styling */
 .service-icon {
     color: white !important;
     background: linear-gradient(135deg, #ec3434, #f87575);
@@ -238,32 +247,46 @@ html, body {
     margin-right: 8px;
     font-size: 1rem;
     vertical-align: middle;
+    transition: transform 0.3s ease; /* Para uma animação suave ao girar */
 }
 
+.service-icon.rotated {
+    transform: rotate(90deg); /* Rotaciona o ícone em 90 graus */
+}
+
+
+/* Modal Styling */
 .service-modal {
     display: none;
     position: absolute;
-    bottom: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
     background-color: #ffffff;
     color: #333;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 4000; /* Aumenta o z-index do modal para que ele fique acima de outras seções */
-    width: auto;
+    z-index: 4000;
     max-width: 500px;
-    height: auto;
-}
-
-
-.modal-content {
+    width: auto;
     font-size: 0.9rem;
     line-height: 1.5;
 }
 
-.modal-content h2 {
+/* Right Aligned Modal */
+.modal-right {
+    top: 50%;
+    left: calc(100% + 10px);
+    transform: translateY(-50%);
+}
+
+/* Left Aligned Modal */
+.modal-left {
+    top: 50%;
+    right: calc(100% + 10px);
+    transform: translateY(-50%);
+}
+
+/* Content Styling */
+.modal-content h6 {
     margin-top: 0;
     font-size: 1.25rem;
     color: #444;
@@ -276,20 +299,38 @@ html, body {
     color: #666;
 }
 
+/* Arrow on Modal */
 .service-modal::after {
     content: '';
     position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
     border-width: 8px;
     border-style: solid;
-    border-color: #ffffff transparent transparent transparent;
-}
-
-.service-item:hover .service-modal {
     display: block;
 }
+
+.modal-right::after {
+    left: -8px;
+    border-color: transparent transparent transparent #ffffff;
+}
+
+.modal-left::after {
+    right: -8px;
+    border-color: transparent #ffffff transparent transparent;
+}
+.service-item {
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.accordion-body {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Overlay */
 .overlay {

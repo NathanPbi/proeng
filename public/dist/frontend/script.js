@@ -27,18 +27,51 @@ document.querySelector('.navbar-toggler').addEventListener('click', function () 
     navbarNav.classList.toggle('show');
 });
 
-function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'block';
-    document.querySelector('.modal-overlay').style.display = 'block';
-}
+// Adiciona um listener para cliques em todo o documento
+document.addEventListener('click', function (e) {
+    const isAccordionItem = e.target.closest('.service-item');
+    const openItems = document.querySelectorAll('.accordion-collapse.show');
 
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-    document.querySelector('.modal-overlay').style.display = 'none';
-}
-
-// Fechar o modal ao clicar fora
-document.querySelector('.modal-overlay').addEventListener('click', function() {
-    document.querySelectorAll('.modal-centered').forEach(modal => modal.style.display = 'none');
-    this.style.display = 'none';
+    // Fecha o acordeão ao clicar fora
+    if (!isAccordionItem) {
+        openItems.forEach(item => {
+            item.classList.remove('show');
+            // Remove a rotação do ícone
+            const iconToClose = item.previousElementSibling.querySelector('.service-icon');
+            if (iconToClose) {
+                iconToClose.classList.remove('rotated'); // Remove a classe de rotação
+            }
+        });
+    } else {
+        // Clica em um item do acordeão
+        toggleAccordion(isAccordionItem);
+    }
 });
+
+function toggleAccordion(element) {
+    const target = document.querySelector(element.getAttribute('data-bs-target'));
+    const icon = element.querySelector('.service-icon'); // Seleciona o ícone do item
+
+    // Alterna o item atual
+    const isOpen = target.classList.toggle('show');
+
+    // Se o item está agora aberto, adiciona a classe de rotação
+    if (isOpen) {
+        icon.classList.add('rotated'); // Adiciona a classe para rotacionar
+    } else {
+        icon.classList.remove('rotated'); // Remove a classe se está fechado
+    }
+
+    // Fecha todos os outros itens abertos
+    const openItems = document.querySelectorAll('.accordion-collapse.show');
+    openItems.forEach(item => {
+        if (item !== target) {
+            item.classList.remove('show');
+            // Remove a rotação do ícone
+            const iconToClose = item.previousElementSibling.querySelector('.service-icon');
+            if (iconToClose) {
+                iconToClose.classList.remove('rotated'); // Remove a classe de rotação
+            }
+        }
+    });
+}
