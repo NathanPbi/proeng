@@ -80,3 +80,38 @@ function toggleAccordion(element) {
         }
     }
 }
+
+
+//     // Carrega e organiza os serviços por ordem
+//     const serviceSnapshot = await db.collection("servicos").orderBy("order").get();
+//     let leftColumn = true;
+
+//     serviceSnapshot.forEach(doc => {
+//         const data = doc.data();
+
+//         const serviceItem = document.createElement("div");
+//         serviceItem.classList.add("service-item");
+//         serviceItem.innerHTML = `
+//             <p class="service-title text-light d-flex align-items-center" onclick="toggleAccordion(this)" data-bs-toggle="collapse" data-bs-target="#collapse${doc.id}" aria-expanded="false" aria-controls="collapse${doc.id}">
+//                 <i class="fas fa-bolt service-icon me-2"></i>
+//                 <span class="new-bg px-1 text-center">${data.title}</span>
+//             </p>
+//             <div id="collapse${doc.id}" class="accordion-collapse collapse" data-bs-parent="#${leftColumn ? 'accordionLeft' : 'accordionRight'}">
+//                 <div class="accordion-body">
+//                     <img src="${data.imageUrl}" alt="${data.title}" class="service-img mb-3" style="width: 100%; height: auto;">
+//                     <p>${data.description}</p>
+//                 </div>
+//             </div>
+//         `;
+
+//         if (leftColumn) {
+//             serviceContainerLeft.appendChild(serviceItem);
+//         } else {
+//             serviceContainerRight.appendChild(serviceItem);
+//         }
+//         leftColumn = !leftColumn;
+//     });
+// }
+
+// // Carrega os serviços e parceiros ao carregar a página
+// document.addEventListener("DOMContentLoaded", loadServicesAndPartners);

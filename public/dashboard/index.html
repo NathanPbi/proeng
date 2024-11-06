@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard de Gerenciamento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #333;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        h2,
+        h4 {
+            text-align: center;
+            color: #f8f9fa;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="file"],
+        input[type="number"] {
+            background-color: #444;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            border: none;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            border: none;
+        }
+
+        #service-images img,
+        #partner-images img {
+            margin: 5px;
+            border-radius: 5px;
+            border: 2px solid #444;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Dashboard de Gerenciamento</h2>
+
+        <!-- Login Section -->
+        <div id="login-section">
+            <input type="email" id="email" placeholder="E-mail" class="form-control mb-2">
+            <input type="password" id="password" placeholder="Senha" class="form-control mb-2">
+            <button class="btn btn-primary" onclick="login()">Login</button>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div id="dashboard-section" style="display: none;">
+            <h4>Adicionar Serviço</h4>
+            <input type="text" id="servicos-title" placeholder="Título do Serviço" class="form-control">
+            <textarea id="servicos-description" placeholder="Descrição do Serviço" class="form-control"></textarea>
+            <input type="number" id="servicos-order" placeholder="Ordem" class="form-control">
+            <input type="file" id="servicos-image" class="form-control">
+            <button class="btn btn-success" onclick="uploadServiceData('servicos')">Enviar Serviço</button>
+
+            <h4 class="mt-4">Adicionar Parceiro</h4>
+            <input type="text" id="parceiros-title" placeholder="Título do Parceiro" class="form-control">
+            <textarea id="parceiros-description" placeholder="Descrição do Parceiro" class="form-control"></textarea>
+            <input type="number" id="parceiros-order" placeholder="Ordem" class="form-control">
+            <input type="file" id="parceiros-image" class="form-control">
+            <button class="btn btn-success" onclick="uploadServiceData('parceiros')">Enviar Parceiro</button>
+
+            <button class="btn btn-danger mt-4" onclick="logout()">Sair</button>
+
+            <h5 class="mt-4">Imagens de Serviços</h5>
+            <div id="service-images" class="d-flex flex-wrap gap-2"></div>
+
+            <h5 class="mt-4">Imagens de Parceiros</h5>
+            <div id="partner-images" class="d-flex flex-wrap gap-2"></div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+  
+    <script>
+        // Configuração do Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCi0wfRB7yQkKaFqb9YKxhWPpQUAnbi1hk",
+            authDomain: "proeng-4373f.firebaseapp.com",
+            projectId: "proeng-4373f",
+            storageBucket: "proeng-4373f.appspot.com",
+            messagingSenderId: "19746635748",
+            appId: "SUA_APP_ID"  // Substitua por seu appId real
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+        const storage = firebase.storage();
+
+        // Função de login
+        function login() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            auth.signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    document.getElementById("login-section").style.display = "none";
+                    document.getElementById("dashboard-section").style.display = "block";
+                    loadServiceImages();
+                })
+                .catch(error => alert("Erro ao fazer login: " + error.message));
+        }
+
+        // Função de logout
+        function logout() {
+            auth.signOut().then(() => {
+                document.getElementById("dashboard-section").style.display = "none";
+                document.getElementById("login-section").style.display = "block";
+            });
+        }
+
+        // Função para enviar dados
+        async function uploadServiceData(collection) {
+            const title = document.getElementById(`${collection}-title`).value;
+            const description = document.getElementById(`${collection}-description`).value;
+            const order = document.getElementById(`${collection}-order`).value;
+            const fileInput = document.getElementById(`${collection}-image`);
+            const file = fileInput.files[0];
+
+            if (!title || !description || !file || !order) {
+                alert("Por favor, preencha todos os campos e selecione uma imagem.");
+                return;
+            }
+
+            const storageRef = storage.ref(`${collection}/${file.name}`);
+            await storageRef.put(file);
+            const imageUrl = await storageRef.getDownloadURL();
+
+            await db.collection(collection).add({
+                title: title,
+                description: description,
+                imageUrl: imageUrl,
+                order: parseInt(order)
+            });
+
+            alert("Dados enviados com sucesso!");
+            fileInput.value = "";
+            loadServiceImages();
+        }
+
+        // Função para carregar e exibir imagens
+        async function loadServiceImages() {
+            const serviceContainer = document.getElementById("service-images");
+            const partnerContainer = document.getElementById("partner-images");
+
+            serviceContainer.innerHTML = "";
+            partnerContainer.innerHTML = "";
+
+            const serviceSnapshot = await db.collection("servicos").orderBy("order").get();
+            serviceSnapshot.forEach(doc => {
+                const data = doc.data();
+                const serviceItem = document.createElement("div");
+                serviceItem.innerHTML = `
+                    <div class="service-item">
+                        <img src="${data.imageUrl}" alt="Imagem de Serviço" class="service-img" />
+                        <h6>${data.title}</h6>
+                        <p>${data.description}</p>
+                    </div>
+                `;
+                serviceContainer.appendChild(serviceItem);
+            });
+
+            const partnerSnapshot = await db.collection("parceiros").orderBy("order").get();
+            partnerSnapshot.forEach(doc => {
+                const data = doc.data();
+                const partnerItem = document.createElement("div");
+                partnerItem.innerHTML = `
+                    <div class="partner-item">
+                        <img src="${data.imageUrl}" alt="Imagem de Parceiro" class="partner-img" />
+                        <h6>${data.title}</h6>
+                        <p>${data.description}</p>
+                    </div>
+                `;
+                partnerContainer.appendChild(partnerItem);
+            });
+        }
+
+        // Carrega as imagens ao carregar a página
+        document.addEventListener("DOMContentLoaded", loadServiceImages);
+    </script>
+</body>
+
+</html>
