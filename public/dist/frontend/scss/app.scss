@@ -119,7 +119,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%
+    width: 100%;
 }
 
 .line-with-icon::before,
@@ -127,14 +127,15 @@ body {
     content: "";
     flex: 1;
     height: 2px;
-    background: linear-gradient(to right, #ffffff, #e3dddd)
+    background: linear-gradient(to right, #ffffff, #f9f7f7);
 }
 
 .line-with-icon span {
     margin: 0 10px;
     font-size: 24px;
-    color: #f2eaea
+    color: white !important; /* Garantir que o ícone fique branco */
 }
+
 
 .headline-text {
     position: absolute;
@@ -218,7 +219,7 @@ body {
 }
 
 .new-bg {
-    background: linear-gradient(0deg, hsl(0, 2%, 10%), hsl(0, 66%, 68%) 100%);
+    background: linear-gradient(0deg, hsl(0, 34%, 21%), hsl(0, 66%, 68%) 100%);
     padding: 2px 4px;
     border-radius: 3px;
     color: #fff
@@ -267,7 +268,10 @@ body {
 .accordion-body p,
 .accordion-body li,
 .accordion-body div {
-    margin: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
     padding: 0;
 }
 
@@ -285,12 +289,45 @@ body {
 }
 
 .frame-content {
-    position: relative;
+
     z-index: 1;
     text-align: center;
     color: #fff;
     padding: 20px
 }
+
+
+.card-wrapper {
+    display: flex;
+    gap: 10px;
+    animation: scroll-carousel 120s linear infinite; /* A animação vai durar 120 segundos */
+}
+
+.card {
+    margin-top: 30px;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  
+}
+
+@keyframes scroll-carousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-1300%); /* Move mais rapidamente para a esquerda */ }
+}
+
 
 :root {
     --icon-color: #fff;
@@ -340,6 +377,10 @@ body {
     100% {
         box-shadow: 0 0 0 0 rgba(0, 200, 0, 0)
     }
+}
+
+.carousel-slide {
+    justify-content: center;
 }
 
 @media(max-width: 768px) {
@@ -437,5 +478,21 @@ body {
             background-attachment: scroll;
             background-position: center -100px
         }
+    }
+
+    .card {
+        width: 250px; /* Tornando as imagens responsivas */
+        height: 240px; /* Ajustando a altura automaticamente */
+        max-width: 400px; /* Definindo um tamanho máximo de largura */
+    }
+
+    .card-wrapper {
+        animation: scroll-carousel-mobile 80s linear infinite; /* Duração mais curta para dispositivos móveis */
+    }
+    
+    /* Ajuste da animação para dispositivos móveis */
+    @keyframes scroll-carousel-mobile {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-1000%); /* Ajuste da animação para a largura da tela */ }
     }
 }
