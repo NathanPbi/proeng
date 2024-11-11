@@ -219,7 +219,7 @@ body {
 }
 
 .new-bg {
-    background: linear-gradient(0deg, hsl(0, 34%, 21%), hsl(0, 66%, 68%) 100%);
+    background: linear-gradient(0deg, hsl(0, 44%, 24%), hsl(0, 66%, 68%) 100%);
     padding: 2px 4px;
     border-radius: 3px;
     color: #fff
@@ -295,18 +295,22 @@ body {
     color: #fff;
     padding: 20px
 }
-
+.section-4 {
+    margin: 0;
+}
 
 .card-wrapper {
-    display: flex;
-    gap: 10px;
+    display: block;
+    gap: 8px;
     animation: scroll-carousel 120s linear infinite; /* A animação vai durar 120 segundos */
+    
 }
 
 .card {
+    padding: 25px;
     margin-top: 30px;
-    width: 320px;
-    height: 320px;
+    width: 200px;
+    height: 180px;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -325,7 +329,7 @@ body {
 
 @keyframes scroll-carousel {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-1300%); /* Move mais rapidamente para a esquerda */ }
+    100% { transform: translateX(-800%); /* Move mais rapidamente para a esquerda */ }
 }
 
 
@@ -466,11 +470,7 @@ body {
     }
 
     .section-3 {
-        background-image: url("/dist/assets/img/bg-media-tensao.jpg?v=1.2");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center -100px;
-        background-attachment: fixed
+        max-width: 100%;
     }
 
     @supports(-webkit-overflow-scrolling: touch) {
