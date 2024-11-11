@@ -108,7 +108,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(118, 111, 111, 0.339), rgba(242, 237, 237, 0.5)), url("/dist/assets/img/headline.jpeg");
+    background-image: linear-gradient(rgba(118, 111, 111, 0.339), rgba(242, 237, 237, 0.5)), url("/public/dist/assets/img/headline.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -133,7 +133,8 @@ body {
 .line-with-icon span {
     margin: 0 10px;
     font-size: 24px;
-    color: white !important; /* Garantir que o ícone fique branco */
+    color: white !important;
+    /* Garantir que o ícone fique branco */
 }
 
 
@@ -160,7 +161,7 @@ body {
 }
 
 .section-2 {
-    background-color: #bbb9b9;
+    background-color: #cac7c7;
     position: relative
 }
 
@@ -180,7 +181,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("/dist/assets/img/bg-media-tensao.jpg?v=1.1");
+    background-image: url("/public/dist/assets/img/bg-media-tensao.jpg?v=1.1");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -295,15 +296,18 @@ body {
     color: #fff;
     padding: 20px
 }
+
 .section-4 {
     margin: 0;
+    overflow: hidden;
+    background-color: #c4c2c2;;
 }
 
 .card-wrapper {
-    display: block;
+    display: flex;
     gap: 8px;
-    animation: scroll-carousel 120s linear infinite; /* A animação vai durar 120 segundos */
-    
+    animation: scroll-carousel 120s linear infinite;
+    white-space: nowrap;
 }
 
 .card {
@@ -324,12 +328,84 @@ body {
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: contain;  
+    object-fit: contain;
 }
 
+/* A animação vai fazer o movimento de rolagem */
 @keyframes scroll-carousel {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-800%); /* Move mais rapidamente para a esquerda */ }
+    0% {
+        transform: translateX(0);
+        /* Início do movimento */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* Move todos os itens para a esquerda */
+    }
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer .row>div {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer .contact-info {
+    text-align: left;
+    max-width: 25%;
+}
+
+.footer .contact-info h5 {
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.footer .contact-info p {
+    margin: 0;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.footer .contact-form {
+    max-width: 90%;
+}
+
+.footer .map {
+    max-width: 100%;
+    text-align: right;
+}
+
+.footer .form-control {
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.footer .form-control::placeholder {
+    color: #ccc;
+}
+
+.footer .btn-primary {
+    background-color: #0062cc;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.footer .btn-primary:hover {
+    background-color: #0056b3;
 }
 
 
@@ -381,6 +457,7 @@ body {
     100% {
         box-shadow: 0 0 0 0 rgba(0, 200, 0, 0)
     }
+
 }
 
 .carousel-slide {
@@ -481,18 +558,47 @@ body {
     }
 
     .card {
-        width: 250px; /* Tornando as imagens responsivas */
-        height: 240px; /* Ajustando a altura automaticamente */
-        max-width: 400px; /* Definindo um tamanho máximo de largura */
+        width: 150px;
+        height: 100px;
+        max-width: 400px;
     }
 
     .card-wrapper {
-        animation: scroll-carousel-mobile 80s linear infinite; /* Duração mais curta para dispositivos móveis */
+        animation: scroll-carousel-mobile 80s linear infinite;
     }
-    
-    /* Ajuste da animação para dispositivos móveis */
+
     @keyframes scroll-carousel-mobile {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-1000%); /* Ajuste da animação para a largura da tela */ }
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-1000%);
+            /* Ajuste da animação para a largura da tela */
+        }
     }
+
+    .footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .contact-info,
+    .footer .contact-form,
+    .footer .map {
+        max-width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer .contact-info {
+        text-align: center;
+    }
+}
+
+.mission-card:hover,
+.vision-card:hover,
+.values-card:hover {
+    background-color: #444444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
