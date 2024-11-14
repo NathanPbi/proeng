@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "proeng-4373f",
-    "firebase init hosting": "proeng-aab64"
+    "default": "proeng-4373f"
   },
   "targets": {},
   "etags": {}
