@@ -311,9 +311,11 @@ body {
     display: flex;
     gap: 8px;
     animation: scroll-carousel 60s linear infinite;
-    /* Animação do carrossel com loop infinito */
+    /* Animação contínua do carrossel */
     width: max-content;
-    /* Garante que a largura do wrapper seja suficiente para acomodar os cards */
+    /* Ajuste para garantir que o contêiner ocupe a largura total */
+    flex-wrap: nowrap;
+    /* Impede a quebra de linha */
 }
 
 /* Estilo dos cards */
@@ -322,7 +324,9 @@ body {
     padding: 25px;
     margin-top: 30px;
     width: 200px;
+    /* Tamanho fixo para desktop */
     height: 180px;
+    /* Tamanho fixo para desktop */
     overflow: hidden;
     border-radius: 10px;
     display: flex;
@@ -331,8 +335,6 @@ body {
     flex-shrink: 0;
     /* Impede que o card encolha durante a animação */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    /* Transição suave ao mover os cards */
 }
 
 .card img {
@@ -346,12 +348,11 @@ body {
 @keyframes scroll-carousel {
     0% {
         transform: translateX(0);
-        /* Inicia com a posição original dos cards */
     }
 
     100% {
         transform: translateX(-50%);
-        /* Move os cards para a esquerda, deslocando 50% do seu tamanho */
+        /* Move os cards para a esquerda */
     }
 }
 
@@ -523,6 +524,7 @@ body {
         overscroll-behavior: contain;
     }
 
+    /* Logo centralizada no mobile */
     .logo {
         display: flex;
         justify-content: center;
@@ -535,30 +537,28 @@ body {
         z-index: 1000;
     }
 
+    /* Seção 1 - Ajustando altura para mobile */
     .section-1 {
         height: 250px;
     }
 
-    /* Centralizando o Header */
+    /* Ajuste no header para centralizar o conteúdo no mobile */
     .header {
         display: flex;
         justify-content: center;
-        /* Centraliza o conteúdo */
         align-items: center;
-        /* Centraliza verticalmente */
         background-color: rgba(0, 0, 0, 0.7);
-
-        /* Ajustando a altura do header */
+        /* Fundo escuro */
         position: fixed;
         top: 0;
-        /* Garante que o header esteja no topo */
         left: 0;
         width: 100%;
         z-index: 1000;
         padding: 17px;
+        max-height: 170px;
     }
 
-    /* Ajustes de texto no headline */
+    /* Ajustes no texto do headline */
     .text-headline.overlay-text {
         position: relative;
         top: 8%;
@@ -567,7 +567,6 @@ body {
         transform: translateX(-50%);
         padding: 18px;
         text-align: center;
-        justify-content: center;
     }
 
     .text-headline.overlay-text h1 {
@@ -579,12 +578,13 @@ body {
         margin: 7px;
     }
 
-    /* Ajuste para a classe bg-danger para evitar que fique "grosso" no mobile */
+    /* Ajuste para a classe bg-danger no mobile */
     .bg-danger {
         padding: 2px 5px;
+        /* Reduzindo o padding para telas menores */
     }
 
-    /* Navegação responsiva */
+    /* Navegação responsiva (menu hamburger) */
     .navbar-nav {
         background-color: rgba(230, 230, 230, 0.9);
         position: absolute;
@@ -597,9 +597,10 @@ body {
 
     .navbar-nav.show {
         display: flex;
+        /* Exibe o menu quando a classe .show é aplicada */
     }
 
-    /* Estilos dos links da navbar */
+    /* Estilo dos links da navbar */
     .navbar-nav .nav-link {
         padding: 10px;
         color: #555;
@@ -607,7 +608,7 @@ body {
         border-bottom: 1px solid #ccc;
     }
 
-    /* Modal responsivo para serviços */
+    /* Modal responsivo */
     .service-modal {
         width: 90%;
         left: 5%;
@@ -624,17 +625,19 @@ body {
         }
     }
 
-    /* Ajustes para cards responsivos */
+    /* Ajuste dos cards no mobile (diminuir o tamanho dos cards) */
     .card {
         width: 180px;
         height: 140px;
         max-width: 100%;
-        /* Ajusta o tamanho máximo para ocupar mais espaço no mobile */
+        /* Certificando que os cards ocupem 100% da largura disponível */
     }
 
     /* Carrossel de cards no mobile */
     .card-wrapper {
         animation: scroll-carousel-mobile 80s linear infinite;
+        display: flex;
+        gap: 10px;
     }
 
     @keyframes scroll-carousel-mobile {
@@ -644,10 +647,11 @@ body {
 
         100% {
             transform: translateX(-1000%);
+            /* Controla o movimento contínuo dos cards */
         }
     }
 
-    /* Seção 4 sem margens extras */
+    /* Ajuste para as margens da seção 4 no mobile */
     .section-4 {
         margin: 0;
     }
@@ -659,7 +663,7 @@ body {
         padding: 10px;
     }
 
-    /* Itens de menu */
+    /* Itens de menu ajustados para uma coluna no mobile */
     .item-menu {
         display: flex;
         flex-direction: column;
@@ -683,4 +687,45 @@ body {
         background-color: #444;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
+    /* Ajustes para centralizar conteúdo de texto no header */
+    .header h1,
+    .header p {
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    .section-4 {
+        padding: 0 10px;
+        /* Garante que haja espaçamento nas laterais */
+        background-color: #7775759c;
+    }
+
+    .card-wrapper {
+        animation: scroll-carousel-mobile 150s linear infinite;
+        /* Aumenta o tempo para movimento mais lento no mobile */
+        width: max-content;
+        gap: 5px;
+    }
+
+    .card {
+        width: 150px;
+        /* Menor largura no mobile */
+        height: 120px;
+        /* Menor altura no mobile */
+        padding: 15px;
+    }
+
+    /* Animação do carrossel no mobile */
+    @keyframes scroll-carousel-mobile {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+            /* Move os cards de maneira suave e contínua no mobile */
+        }
+    }
+
 }
