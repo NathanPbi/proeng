@@ -66,6 +66,23 @@ function toggleAccordion(element) {
     }
   }
 }
+const swiperThumbs = new Swiper(".mySwiper2", {
+  loop: true,
+  spaceBetween: 10, // Espaço entre miniaturas
+  slidesPerView: 3, // Mostra 3 miniaturas no mobile
+  freeMode: true, // Navegação livre
+  watchSlidesProgress: true, // Sincroniza com o swiper principal
+});
+
+const swiperMain = new Swiper(".mySwiper", {
+  loop: true,
+  spaceBetween: 10, // Espaçamento entre slides
+  centeredSlides: true, // Centraliza o slide ativo
+  navigation: true, // Botões de navegação (opcional no mobile)
+  thumbs: {
+    swiper: swiperThumbs, // Conecta ao swiper de miniaturas
+  },
+});
 
 //     // Carrega e organiza os serviços por ordem
 //     const serviceSnapshot = await db.collection("servicos").orderBy("order").get();
