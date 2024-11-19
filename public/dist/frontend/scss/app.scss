@@ -160,6 +160,7 @@ body {
     color: #fff
 }
 
+
 .section-2 {
     background-color: #cac7c7;
     position: relative
@@ -297,28 +298,25 @@ body {
     padding: 20px
 }
 
+/* Seção do carrossel */
 .section-4 {
     margin: 0;
     overflow: hidden;
+    /* Esconde a parte do carrossel que está fora da área visível */
     background-color: #7775759c;
 }
 
+/* Wrapper do carrossel (contêiner dos cards) */
 .card-wrapper {
     display: flex;
     gap: 8px;
-    animation: scroll-carousel-left 120s linear infinite;
-    white-space: nowrap;
+    animation: scroll-carousel 60s linear infinite;
+    /* Animação do carrossel com loop infinito */
+    width: max-content;
+    /* Garante que a largura do wrapper seja suficiente para acomodar os cards */
 }
 
-.card-wrapper-reverse {
-    display: flex;
-    gap: 8px;
-    animation: scroll-carousel-right 120s linear infinite;
-    white-space: nowrap;
-    margin-top: 20px;
-    /* ajuste para espaçar as fileiras */
-}
-
+/* Estilo dos cards */
 .card {
     position: relative;
     padding: 25px;
@@ -331,7 +329,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+    /* Impede que o card encolha durante a animação */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    /* Transição suave ao mover os cards */
 }
 
 .card img {
@@ -341,6 +342,31 @@ body {
     border-radius: 10px;
 }
 
+/* Animação do carrossel */
+@keyframes scroll-carousel {
+    0% {
+        transform: translateX(0);
+        /* Inicia com a posição original dos cards */
+    }
+
+    100% {
+        transform: translateX(-50%);
+        /* Move os cards para a esquerda, deslocando 50% do seu tamanho */
+    }
+}
+
+
+// .card::before {
+//     content: "";
+//     position: absolute;
+//     top: -2px; 
+//     left: -2px; 
+//     right: -2px; 
+//     bottom: -2px; 
+//     border-radius: 12px;
+//     background: radial-gradient(circle, rgba(255, 255, 255, 0.089), rgba(255, 255, 255, 0.223) 60%);
+//     pointer-events: none; 
+// }
 
 
 
@@ -354,15 +380,6 @@ body {
     }
 }
 
-@keyframes scroll-carousel-right {
-    0% {
-        transform: translateX(-100%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
 
 
 .footer {
@@ -493,8 +510,9 @@ body {
     justify-content: center;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
 
+    /* Reset de margin e padding para garantir que não haja overflow inesperado */
     html,
     body {
         margin: 0;
@@ -502,7 +520,7 @@ body {
         width: 100%;
         height: 100%;
         overflow-x: hidden;
-        overscroll-behavior: contain
+        overscroll-behavior: contain;
     }
 
     .logo {
@@ -513,82 +531,108 @@ body {
         top: -50px;
         margin: 0;
         left: 50%;
-        transform: translateX(-50%)
+        transform: translateX(-50%);
+        z-index: 1000;
     }
 
+    .section-1 {
+        height: 250px;
+    }
+
+    /* Centralizando o Header */
     .header {
         display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        background-color: rgba(0, 0, 0, 0);
-        max-height: 100vh;
+        justify-content: center;
+        /* Centraliza o conteúdo */
+        align-items: center;
+        /* Centraliza verticalmente */
+        background-color: rgba(0, 0, 0, 0.7);
+
+        /* Ajustando a altura do header */
         position: fixed;
-        overflow: hidden;
+        top: 0;
+        /* Garante que o header esteja no topo */
         left: 0;
-        height: 170px;
         width: 100%;
         z-index: 1000;
-        background-attachment: scroll
+        padding: 17px;
     }
 
+    /* Ajustes de texto no headline */
     .text-headline.overlay-text {
+        position: relative;
         top: 8%;
         left: 50%;
         width: 90%;
-        padding: 20px
+        transform: translateX(-50%);
+        padding: 18px;
+        text-align: center;
+        justify-content: center;
     }
 
     .text-headline.overlay-text h1 {
-        font-size: 1.4rem
+        font-size: 1.3rem;
     }
 
     .text-headline.overlay-text p {
-        font-size: .8rem
+        font-size: 0.7rem;
+        margin: 7px;
     }
 
+    /* Ajuste para a classe bg-danger para evitar que fique "grosso" no mobile */
+    .bg-danger {
+        padding: 2px 5px;
+    }
+
+    /* Navegação responsiva */
     .navbar-nav {
-        background-color: rgba(230, 230, 230, .9);
+        background-color: rgba(230, 230, 230, 0.9);
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         display: none;
-        flex-direction: column
+        flex-direction: column;
     }
 
     .navbar-nav.show {
-        display: flex
+        display: flex;
     }
 
+    /* Estilos dos links da navbar */
     .navbar-nav .nav-link {
         padding: 10px;
         color: #555;
         text-align: center;
-        border-bottom: 1px solid #ccc
+        border-bottom: 1px solid #ccc;
     }
 
+    /* Modal responsivo para serviços */
     .service-modal {
         width: 90%;
         left: 5%;
-        transform: none;
         max-height: 80vh;
-        overflow-y: auto
+        overflow-y: auto;
+        transform: none;
     }
 
-
-    @supports(-webkit-overflow-scrolling: touch) {
+    /* Ajustes de overflow para Safari no iOS */
+    @supports (-webkit-overflow-scrolling: touch) {
         .section-3 {
             background-attachment: scroll;
-            background-position: center -100px
+            background-position: center -100px;
         }
     }
 
+    /* Ajustes para cards responsivos */
     .card {
         width: 180px;
         height: 140px;
-        max-width: 400px;
+        max-width: 100%;
+        /* Ajusta o tamanho máximo para ocupar mais espaço no mobile */
     }
 
+    /* Carrossel de cards no mobile */
     .card-wrapper {
         animation: scroll-carousel-mobile 80s linear infinite;
     }
@@ -603,18 +647,25 @@ body {
         }
     }
 
+    /* Seção 4 sem margens extras */
     .section-4 {
         margin: 0;
     }
 
+    /* Footer alinhado ao centro */
     .navFooter {
+        display: flex;
         justify-content: center;
         padding: 10px;
     }
 
+    /* Itens de menu */
     .item-menu {
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
+        /* Exibe os itens em coluna no mobile */
         justify-content: center;
+        text-align: center;
     }
 
     .item-menu li {
@@ -625,10 +676,11 @@ body {
         font-size: 16px;
     }
 
+    /* Efeito hover para cards */
     .mission-card:hover,
     .vision-card:hover,
     .values-card:hover {
-        background-color: #444444;
+        background-color: #444;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 }
