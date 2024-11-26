@@ -1,13 +1,20 @@
 @import"https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap";
 
+
 html,
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overscroll-behavior: contain
+    overscroll-behavior: contain;
 }
+
+.main-container {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 
 .bg-danger {
     color: #fff !important;
@@ -20,48 +27,21 @@ body {
 }
 
 .header {
-    height: auto; /* Permite que o cabeçalho se ajuste à altura da logo */
-    align-items: center; /* Garante alinhamento correto */
-    display: flex;
-    /* Alinha verticalmente os itens ao centro */
-    justify-content: space-between;
-    /* Distribui o espaço entre os itens */
     background-color: rgba(0, 0, 0, 0);
-    transition: background-color 0.3s ease;
+    transition: background-color .3s ease;
     position: fixed;
     top: 0;
     left: 0;
-    height: 130px;
+    height: 120px;
     width: 100%;
-    z-index: 1000;
-    padding: 0 20px;
-    /* Espaçamento interno opcional */
-}
-
-.header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 130px; /* Ajuste se necessário para acomodar a logo maior */
+    z-index: 1000
 }
 
 .logo {
-    display: flex;
-    margin: 0; /* Remove qualquer margem extra */
-    height: auto; /* Define o tamanho desejado */
-    width: auto; /* Mantém a proporção */
-    max-height: none; /* Remove qualquer limitação de altura */
+    margin: -48px;
+    max-height: 100%;
+    width: auto
 }
-
-
-
-/* Adicione esta regra para os itens da navbar, caso necessário */
-.navbar {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
 
 .header.scrolled {
     background-color: rgba(230, 230, 230, .716)
@@ -69,6 +49,15 @@ body {
 
 .header.scrolled .navbar-nav .nav-link {
     color: #000
+}
+
+.navbar {
+    bottom: 9px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px
 }
 
 .navbar-nav {
@@ -137,7 +126,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100%
 }
 
 .line-with-icon::before,
@@ -145,16 +134,14 @@ body {
     content: "";
     flex: 1;
     height: 2px;
-    background: linear-gradient(to right, #ffffff, #f9f7f7);
+    background: linear-gradient(to right, #ffffff, #f9f7f7)
 }
 
 .line-with-icon span {
     margin: 0 10px;
     font-size: 24px;
-    color: white !important;
-    /* Garantir que o ícone fique branco */
+    color: #fff !important
 }
-
 
 .headline-text {
     position: absolute;
@@ -178,14 +165,13 @@ body {
     color: #fff
 }
 
-
 .section-2 {
     background-color: #cac7c7;
     position: relative
 }
 
 .section-2 h1 {
-    color: rgba(51, 49, 49, .4431372549);
+    color: rgba(51, 49, 49, 0.4431372549);
     border-radius: 4.5px;
     margin: 0
 }
@@ -200,7 +186,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("/distassets/img/bg-media-tensao.jpg?v=1.1");
+    background-image: url("/dist/assets/img/bg-media-tensao.jpg?v=1.1");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -238,114 +224,26 @@ body {
     margin-bottom: 100px
 }
 
-// .new-bg {
-//     background: linear-gradient(0deg, hsl(0, 44%, 24%), hsl(0, 66%, 68%) 100%);
-//     padding: 2px 4px;
-//     border-radius: 3px;
-//     color: #fff
-// }
-
-// .service-icon {
-//     color: #fff !important;
-//     background: linear-gradient(135deg, #ec3434, #f87575);
-//     border-radius: 5px;
-//     padding: 5px;
-//     margin-right: 8px;
-//     font-size: 1rem;
-//     vertical-align: middle;
-//     transition: transform .3s ease
-// }
-
-// .service-icon.rotated {
-//     transform: rotate(90deg)
-// }
-
-// .service-item {
-//     position: relative;
-//     display: inline-block;
-//     cursor: pointer;
-//     color: #fff;
-//     margin-bottom: 20px
-// }
-
-// .service-title {
-//     display: flex;
-//     align-items: center;
-//     font-size: 1rem
-// }
-
-// .accordion-body {
-//     margin-left: auto;
-//     position: relative;
-//     background-color: #fff;
-//     border-radius: 8px;
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
-//     margin: 0;
-//     padding: 8px 12px;
-//     line-height: 1.2;
-// }
-
-// .accordion-body p,
-// .accordion-body li,
-// .accordion-body div {
-//     display: flex;
-//     justify-content: start;
-//     align-items: center;
-
-//     padding: 0;
-// }
-
-
-
-// .overlay {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(255, 0, 0, 0.188));
-//     z-index: 0;
-//     border-style: double
-// }
-
-// .frame-content {
-
-//     z-index: 1;
-//     text-align: center;
-//     color: #fff;
-//     padding: 20px
-// }
-
-// /* Seção do carrossel */
-
-
-/* Ajuste para o swiper principal */
 .mySwiper {
-
-    height: auto;
-    /* Altura ajustada para 60% da tela */
-    max-width: auto;
+    width: 100%;
+    height: 60vh;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    /* Margem lateral para afastar dos cantos */
-    position: relative;
+    position: relative
 }
 
-/* Ajuste para o slide principal */
 .image-container {
     position: relative;
     width: 100%;
     height: 100%;
     margin: 0 auto;
     border-radius: 15px;
-    /* Bordas arredondadas */
-    overflow: hidden;
-    /* Garante que nada ultrapasse os limites */
+    overflow: hidden
 }
 
-/* Adicionando um efeito ::before para sobreposição sutil */
 .image-container::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -353,296 +251,168 @@ body {
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
     z-index: 1;
-    /* Coloca o efeito atrás do texto */
-    border-radius: 15px;
-    /* Bordas arredondadas para visual elegante */
+    border-radius: 15px
 }
 
-/* Ajuste da imagem */
 .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    /* Ajusta a imagem para não ser cortada */
-    transition: transform 0.3s ease;
+    object-fit: cover;
+    transition: transform .3s ease
 }
 
 .image-container img:hover {
-    transform: scale(1.05);
-    /* Leve zoom ao passar o mouse */
+    transform: scale(1.05)
 }
 
-/* Estilo do texto sobre a imagem */
 .text-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    /* Garante que o texto esteja acima do gradiente */
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, .4);
     border-radius: 15px;
     width: 80%;
     max-width: 700px;
-    /* Tamanho máximo para evitar texto muito grande */
-    animation: fadeIn 1s ease-in-out;
-    /* Animação ao aparecer */
+    animation: fadeIn 1s ease-in-out
 }
 
 .text-overlay h2 {
     font-size: 1.6rem;
     margin-bottom: 15px;
-    line-height: 1.2;
+    line-height: 1.2
 }
 
 .text-overlay p {
     font-size: 1rem;
     line-height: 1.5;
-    text-align: justify;
-    /* Justifica o texto */
+    text-align: justify
 }
 
-/* Animação para o texto */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translate(-50%, -60%);
+        transform: translate(-50%, -60%)
     }
 
     to {
         opacity: 1;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%)
     }
 }
 
-/* Ajuste para os thumbnails */
 .mySwiper2 {
     width: 100%;
     margin: 20px auto;
-    padding: 0 20px;
-    /* Margem lateral para afastar dos cantos */
+    padding: 0 20px
 }
 
-/* Efeito de hover nas miniaturas */
 .mySwiper2 img {
-    width: 99%;
-    height: auto;
-    /* Ajusta a altura das miniaturas */
-    object-fit: contain;
-    /* Garante que a imagem da miniatura seja exibida inteira */
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
     border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-    /* Transições suaves */
+    transition: transform .3s ease, box-shadow .3s ease, border .3s ease;
+    cursor: pointer;
+    border: 2px solid rgba(0, 0, 0, 0)
 }
 
 .mySwiper2 img:hover {
     transform: scale(1.1);
-    /* Leve zoom no hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    /* Sombra marcante */
-    border: 2px solid rgba(255, 255, 255, 0.8);
-    /* Destaque na borda */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .3);
+    border: 2px solid hsla(0, 0%, 100%, .8)
 }
 
-/* Destaque na miniatura ativa */
 .mySwiper2 .swiper-slide-thumb-active img {
     transform: scale(1.15);
-    /* Zoom maior para a miniatura ativa */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    /* Sombra mais forte */
-    border: 2px solid #007bff;
-    /* Borda destacada (azul, pode mudar para combinar com o design) */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .4);
+    border: 2px solid #007bff
 }
 
-/* Título no swiper de miniaturas */
 .mySwiper2 .text-overlay h2 {
-    font-size: 0.9rem;
+    font-size: .9rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 5px
 }
-
-ul {
-    list-style-type: disc; /* Garante o tipo de marcador */
-    padding-left: 20px; /* Ajusta o recuo */
-}
-
-ul li {
-    position: relative; /* Garante que o item seja posicionado corretamente */
-    font-size: 16px;
-    color: #fff; /* Cor do texto */
-}
-
-ul li::marker {
-    color: #dc3545 !important; /* Cor do marcador em bg-danger */
-    font-size: 18px; /* Ajusta o tamanho do marcador */
-}
-
-
-
-
-/* Para responsividade, manter a imagem nas miniaturas com tamanho adequado */
-.mySwiper2 img {
-    object-fit: contain;
-    /* Garante que a miniatura seja exibida inteira */
-}
-
-/* Ajustes para imagem do swiper */
-@media (max-width: 768px) {
-    .image-container img {
-        object-fit: contain;
-        /* A imagem do swiper principal também será ajustada */
-    }
-}
-
-@media (max-width: 1024px) {
-    .mySwiper2 {
-        width: 100%;
-        /* Garante o ajuste no tamanho */
-    }
-}
-
-/* Ajuste para os bullets points em colunas */
-ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    /* Espaço para bullets */
-    margin: 0;
-    /* Remover margem do ul */
-    column-count: 2;
-    /* Divide em duas colunas */
-    column-gap: 40px;
-    /* Espaçamento entre as colunas */
-}
-
-ul li {
-    font-size: 14px;
-    color: #fff;
-    text-align: left;
-    /* Justificar o texto à esquerda */
-    margin-bottom: 10px;
-    /* Espaçamento entre os itens da lista */
-}
-
-ul li::marker {
-    color: red;
-    /* Mudando a cor dos bullets para vermelho */
-}
-
-/* Garantindo que o texto nas listas seja justificado à esquerda sem afetar o layout */
-ul,
-ul li {
-    display: block;
-    text-align: left;
-    word-wrap: break-word;
-    /* Quebra palavras longas */
-}
-
 
 .section-4 {
     margin: 0;
     overflow: hidden;
-    /* Esconde a parte do carrossel que está fora da área visível */
-    background-color: #7775759c;
+    background-color: rgba(119, 117, 117, .6117647059)
 }
 
-/* Wrapper do carrossel (contêiner dos cards) */
 .card-wrapper {
     display: flex;
     gap: 8px;
     animation: scroll-carousel 60s linear infinite;
-    /* Animação contínua do carrossel */
     width: max-content;
-    /* Ajuste para garantir que o contêiner ocupe a largura total */
-    flex-wrap: nowrap;
-    /* Impede a quebra de linha */
+    flex-wrap: nowrap
 }
 
-/* Estilo dos cards */
 .card {
     position: relative;
     padding: 25px;
     margin-top: 30px;
     width: 200px;
-    /* Tamanho fixo para desktop */
     height: 180px;
-    /* Tamanho fixo para desktop */
     overflow: hidden;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    /* Impede que o card encolha durante a animação */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, .1)
 }
 
 .card img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    border-radius: 10px;
+    border-radius: 10px
 }
 
-/* Animação do carrossel */
 @keyframes scroll-carousel {
     0% {
-        transform: translateX(0);
+        transform: translateX(0)
     }
 
     100% {
-        transform: translateX(-50%);
-        /* Move os cards para a esquerda */
+        transform: translateX(-50%)
     }
 }
-
-
-// .card::before {
-//     content: "";
-//     position: absolute;
-//     top: -2px; 
-//     left: -2px; 
-//     right: -2px; 
-//     bottom: -2px; 
-//     border-radius: 12px;
-//     background: radial-gradient(circle, rgba(255, 255, 255, 0.089), rgba(255, 255, 255, 0.223) 60%);
-//     pointer-events: none; 
-// }
-
-
 
 @keyframes scroll-carousel-left {
     0% {
-        transform: translateX(0);
+        transform: translateX(0)
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-100%)
     }
 }
-
-
 
 .footer {
     background-color: #8c8888;
     color: #f0f0f0;
     font-size: 16px;
-    padding: 20px 0;
+    padding: 20px 0
 }
 
 .footer .container {
     max-width: 1200px;
-    margin: auto;
+    margin: auto
 }
 
 .footer .footer-title {
     font-weight: bold;
-    color: #ffffff;
+    color: #fff
 }
 
 .footer .form-control {
@@ -650,32 +420,32 @@ ul li {
     color: #fff;
     border: none;
     border-radius: 4px;
-    padding: 10px;
+    padding: 10px
 }
 
 .footer .form-control::placeholder {
-    color: #ccc;
+    color: #ccc
 }
 
 .footer .btn-primary {
     background-color: #202021;
     border: none;
-    transition: background-color 0.3s;
+    transition: background-color .3s
 }
 
 .footer .btn-primary:hover {
-    background-color: #555252;
+    background-color: #555252
 }
 
 .map-container {
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden
 }
 
 .navFooter {
     display: flex;
     justify-content: center;
-    padding: 20px 0;
+    padding: 20px 0
 }
 
 .item-menu {
@@ -683,23 +453,22 @@ ul li {
     padding: 0;
     list-style: none;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 15px
 }
 
 .item-menu li {
-    margin: 0;
+    margin: 0
 }
 
 .item-menu a {
     text-decoration: none;
     color: #555252;
-    transition: color 0.3s ease;
+    transition: color .3s ease
 }
 
 .item-menu a:hover {
-    color: #ffff;
+    color: #fff
 }
-
 
 :root {
     --icon-color: #fff;
@@ -749,16 +518,14 @@ ul li {
     100% {
         box-shadow: 0 0 0 0 rgba(0, 200, 0, 0)
     }
-
 }
 
 .carousel-slide {
-    justify-content: center;
+    justify-content: center
 }
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
 
-    /* Reset de margin e padding para garantir que não haja overflow inesperado */
     html,
     body {
         margin: 0;
@@ -766,10 +533,9 @@ ul li {
         width: 100%;
         height: 100%;
         overflow-x: hidden;
-        overscroll-behavior: contain;
+        overscroll-behavior: contain
     }
 
-    /* Logo centralizada no mobile */
     .logo {
         display: flex;
         justify-content: center;
@@ -779,231 +545,212 @@ ul li {
         margin: 0;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1000;
+        z-index: 1000
     }
 
-    /* Seção 1 - Ajustando altura para mobile */
     .section-1 {
-        height: 340px;
-        margin: 0 40 20px;
+        height: 250px
     }
 
-    /* Ajuste no header para centralizar o conteúdo no mobile */
     .header {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.7);
-        /* Fundo escuro */
+        background-color: rgba(0, 0, 0, .7);
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 1000;
-        padding: 30px;
-        max-height: 170px;
+        padding: 17px;
+        max-height: 170px
     }
 
-    /* Ajustes no texto do headline */
     .text-headline.overlay-text {
         position: relative;
         top: 8%;
         left: 50%;
         width: 90%;
         transform: translateX(-50%);
-        padding: 19px;
-        text-align: center;
+        padding: 18px;
+        text-align: center
     }
 
     .text-headline.overlay-text h1 {
-        font-size: 1.3rem;
+        font-size: 1.3rem
     }
 
     .text-headline.overlay-text p {
-        font-size: 0.7rem;
-        margin: 7px;
+        font-size: .7rem;
+        margin: 7px
     }
 
-    /* Ajuste para a classe bg-danger no mobile */
     .bg-danger {
-        padding: 2px 5px;
-        /* Reduzindo o padding para telas menores */
+        padding: 2px 5px
     }
 
-    /* Navegação responsiva (menu hamburger) */
     .navbar-nav {
-        background-color: rgba(230, 230, 230, 0.9);
+        background-color: rgba(230, 230, 230, .9);
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
         display: none;
-        flex-direction: column;
+        flex-direction: column
     }
 
     .navbar-nav.show {
-        display: flex;
-        /* Exibe o menu quando a classe .show é aplicada */
+        display: flex
     }
 
-    /* Estilo dos links da navbar */
     .navbar-nav .nav-link {
         padding: 10px;
         color: #555;
         text-align: center;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #ccc
     }
 
+    .service-modal {
+        width: 90%;
+        left: 5%;
+        max-height: 80vh;
+        overflow-y: auto;
+        transform: none
+    }
 
-
-    /* Ajustes de overflow para Safari no iOS */
-    @supports (-webkit-overflow-scrolling: touch) {
+    @supports(-webkit-overflow-scrolling: touch) {
         .section-3 {
             background-attachment: scroll;
-            background-position: center -100px;
+            background-position: center -100px
         }
     }
 
+    .card {
+        width: 180px;
+        height: 140px;
+        max-width: 100%
+    }
 
-    /* Carrossel de cards no mobile */
     .card-wrapper {
         animation: scroll-carousel-mobile 80s linear infinite;
         display: flex;
-        gap: 10px;
+        gap: 10px
     }
 
     @keyframes scroll-carousel-mobile {
         0% {
-            transform: translateX(0);
+            transform: translateX(0)
         }
 
         100% {
-            transform: translateX(-1000%);
-            /* Controla o movimento contínuo dos cards */
+            transform: translateX(-1000%)
         }
     }
 
-
- /* Swiper */
     .mySwiper {
-        height: 200px; /* Definir uma altura adequada */
-        padding: 0 15px;
-        overflow: hidden; /* Evita que o conteúdo ultrapasse os limites */
+        height: 40vh;
+        padding: 0 15px
     }
 
-    /* Texto sobreposto */
     .text-overlay {
-        width: 100%; /* Ajuste a largura para ocupar a tela toda */
-        padding: 10px;
+        width: 85%;
+        padding: 10px
     }
 
     .text-overlay h2 {
-        font-size: 1rem; /* Ajusta o tamanho do título para que não fique tão pequeno */
-        line-height: 1.3;
-        margin-bottom: 10px; /* Espaçamento inferior ajustado */
+        font-size: 1rem;
+        line-height: 1.2;
+        margin-bottom: 5px
     }
 
     .text-overlay p {
-        font-size: 0.85rem; /* Tamanho de texto reduzido, mas legível */
-        line-height: 1.4;
+        font-size: .8rem;
+        line-height: 1.3;
         text-align: justify;
-        margin: 0;
+        margin: 0
     }
 
-    /* Miniaturas no swiper (thumbs) */
     .mySwiper2 {
-        padding: 0 15px; /* Ajuste a margem lateral */
+        padding: 0 15px
     }
 
     .mySwiper2 .swiper-slide {
-        flex: 0 0 calc(33.33% - 10px); /* Exibe 3 miniaturas */
-        margin-right: 10px;
+        flex: 0 0 calc(33.33% - 10px);
+        margin-right: 10px
     }
 
     .mySwiper2 img {
-        height: 70px; /* Ajuste a altura das miniaturas */
+        height: 90px;
         object-fit: cover;
-        border-radius: 8px; /* Bordas arredondadas */
+        border-radius: 8px
     }
 
-    /* Centralização */
     .mySwiper2 .swiper-wrapper {
-        justify-content: center; /* Centraliza as miniaturas */
+        justify-content: center
     }
 
     .section-4 {
-        margin: 0;
+        margin: 0
     }
 
-    /* Footer alinhado ao centro */
     .navFooter {
         display: flex;
         justify-content: center;
-        padding: 10px;
+        padding: 10px
     }
 
     .item-menu {
         display: flex;
         flex-direction: column;
-        /* Exibe os itens em coluna no mobile */
         justify-content: center;
-        text-align: center;
+        text-align: center
     }
 
     .item-menu li {
-        margin: 0 10px;
+        margin: 0 10px
     }
 
     .item-menu a {
-        font-size: 16px;
+        font-size: 16px
     }
 
-    /* Efeito hover para cards */
     .mission-card:hover,
     .vision-card:hover,
     .values-card:hover {
         background-color: #444;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, .2)
     }
 
-    /* Ajustes para centralizar conteúdo de texto no header */
     .header h1,
     .header p {
         text-align: center;
-        font-size: 1rem;
+        font-size: 1rem
     }
 
     .section-4 {
         padding: 0 10px;
-        /* Garante que haja espaçamento nas laterais */
-        background-color: #7775759c;
+        background-color: rgba(119, 117, 117, .6117647059)
     }
 
     .card-wrapper {
         animation: scroll-carousel-mobile 150s linear infinite;
-        /* Aumenta o tempo para movimento mais lento no mobile */
         width: max-content;
-        gap: 5px;
+        gap: 5px
     }
 
     .card {
         width: 150px;
-        /* Menor largura no mobile */
         height: 120px;
-        /* Menor altura no mobile */
-        padding: 15px;
+        padding: 15px
     }
 
-    /* Animação do carrossel no mobile */
     @keyframes scroll-carousel-mobile {
         0% {
-            transform: translateX(0);
+            transform: translateX(0)
         }
 
         100% {
-            transform: translateX(-100%);
-            /* Move os cards de maneira suave e contínua no mobile */
+            transform: translateX(-100%)
         }
     }
-
 }
