@@ -224,13 +224,14 @@ body {
     margin-bottom: 100px
 }
 
+/* Estilo para o swiper principal */
 .mySwiper {
     width: 100%;
     height: 60vh;
     max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
-    position: relative
+    position: relative;
 }
 
 .image-container {
@@ -239,11 +240,18 @@ body {
     height: 100%;
     margin: 0 auto;
     border-radius: 15px;
-    overflow: hidden
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 .image-container::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -251,96 +259,181 @@ body {
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
     z-index: 1;
-    border-radius: 15px
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .3s ease
+    border-radius: 15px;
 }
 
 .image-container img:hover {
-    transform: scale(1.05)
+    transform: scale(1.05);
 }
 
+/* Título no topo, centralizado */
 .text-overlay {
     position: absolute;
-    top: 50%;
+    top: 5%; /* Ajusta o título para ficar bem no topo */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: 2;
-    color: #fff;
+    color: white;
     text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, .4);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     width: 80%;
     max-width: 700px;
-    animation: fadeIn 1s ease-in-out
+    animation: fadeIn 1s ease-in-out;
 }
 
+/* Estilo do título */
 .text-overlay h2 {
     font-size: 1.6rem;
-    margin-bottom: 15px;
-    line-height: 1.2
+    margin-bottom: 10px; /* Espaçamento adequado do título para os itens */
+    line-height: 1.2;
 }
 
-.text-overlay p {
+/* Lista de itens abaixo do título */
+.text-overlay ul {
+    list-style-type: disc;
+    margin: 0;
+    padding-left: 30px;
+    text-align: left;
+    column-count: 1; /* Começa com 1 coluna */
+}
+
+.text-overlay li {
     font-size: 1rem;
     line-height: 1.5;
-    text-align: justify
+    margin-bottom: 8px;
+    color: #fff;
 }
 
+.text-overlay li::marker {
+    color: red;
+    font-size: 1.2em;
+}
+
+/* Ajustes para dispositivos desktop - 2 colunas */
+@media (min-width: 1024px) {
+    .text-overlay {
+        column-count: 2;
+        column-gap: 20px;
+        max-height: none;
+        text-align: justify;
+    }
+
+    .text-overlay ul {
+        padding-left: 20px;
+    }
+}
+
+/* Animação do fade */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translate(-50%, -60%)
+        transform: translateX(-50%) translateY(-60%);
     }
 
     to {
         opacity: 1;
-        transform: translate(-50%, -50%)
+        transform: translateX(-50%) translateY(-50%);
     }
 }
 
+/* Estilo para o swiper de miniaturas */
 .mySwiper2 {
     width: 100%;
     margin: 20px auto;
-    padding: 0 20px
+    padding: 0 20px;
 }
 
 .mySwiper2 img {
     width: 100%;
-    height: 120px;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
     border-radius: 10px;
-    transition: transform .3s ease, box-shadow .3s ease, border .3s ease;
-    cursor: pointer;
-    border: 2px solid rgba(0, 0, 0, 0)
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
 .mySwiper2 img:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, .3);
-    border: 2px solid hsla(0, 0%, 100%, .8)
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .mySwiper2 .swiper-slide-thumb-active img {
     transform: scale(1.15);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, .4);
-    border: 2px solid #007bff
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border: 2px solid tranparent;
 }
 
-.mySwiper2 .text-overlay h2 {
-    font-size: .9rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+/* Títulos para miniaturas */
+.thumb-title {
     text-align: center;
-    margin-top: 5px
+    font-size: 1rem;
+    /* Aumentei o tamanho da fonte para melhor legibilidade */
+    color: #fffffffc;
+    /* Mantém o texto branco */
+    margin-top: 5px;
+    padding: 5px 10px;
+    /* Adiciona um pouco de padding ao redor do texto */
+    background-color: rgba(19, 18, 18, 0.5);
+    /* Fundo semitransparente para aumentar o contraste */
+    border-radius: 5px;
+    /* Arredonda os cantos do fundo */
+    text-shadow: 1px 1px 3px rgba(85, 83, 83, 0.7);
+    /* Adiciona sombra para melhorar a visibilidade */
 }
+
+
+@media (max-width: 768px) {
+    /* Remover miniaturas no mobile */
+    .mySwiper2 {
+        display: none;
+    }
+
+    /* Ajustar a altura e o layout do swiper principal */
+    .mySwiper {
+        height: auto; /* Altura adaptativa */
+    }
+
+    .image-container {
+        height: auto; /* Permitir que o container se ajuste ao conteúdo */
+    }
+
+    .text-overlay {
+        width: 90%;
+        max-width: 100%;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        overflow: visible; /* Garantir que o texto não seja cortado */
+        position: relative;
+    }
+
+    .text-overlay h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .text-overlay ul {
+        font-size: 1rem;
+        line-height: 1.5;
+        padding-left: 20px;
+        margin: 0;
+    }
+
+    .text-overlay ul li {
+        word-wrap: break-word; /* Quebrar texto longo */
+    }
+
+    .image-container img {
+        object-fit: cover;
+        width: 100%;
+        height: auto; /* Mostrar a imagem completa */
+    }
+}
+
+
+
+
 
 .section-4 {
     margin: 0;
@@ -648,8 +741,8 @@ body {
     }
 
     .mySwiper {
-        height: 40vh;
-        padding: 0 15px
+        height: 60vh;
+        padding: 0 20px
     }
 
     .text-overlay {
