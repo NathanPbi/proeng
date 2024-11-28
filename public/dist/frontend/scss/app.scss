@@ -8,7 +8,9 @@ body {
     width: 100%;
     height: 100%;
     overscroll-behavior: contain;
+
 }
+
 
 .main-container {
     overflow-x: hidden;
@@ -233,9 +235,12 @@ body {
     padding: 0 20px;
     position: relative;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    box-sizing: border-box; /* Garante que padding não afete o layout */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    box-sizing: border-box;
+    /* Garante que padding não afete o layout */
 }
 
 /* Container da imagem do card principal */
@@ -251,7 +256,8 @@ body {
 .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* A imagem cobre todo o container sem distorcer */
+    object-fit: cover;
+    /* A imagem cobre todo o container sem distorcer */
     transition: transform 0.3s ease;
 }
 
@@ -274,9 +280,11 @@ body {
 /* Título e conteúdo centralizado dentro do card */
 .text-overlay {
     position: absolute;
-    top: 50%; /* Centraliza verticalmente */
+    top: 50%;
+    /* Centraliza verticalmente */
     left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza completamente */
+    transform: translate(-50%, -50%);
+    /* Centraliza completamente */
     z-index: 2;
     color: white;
     text-align: center;
@@ -286,7 +294,8 @@ body {
     width: 80%;
     max-width: 700px;
     animation: fadeIn 1s ease-in-out;
-    box-sizing: border-box; /* Inclui o padding no cálculo da largura */
+    box-sizing: border-box;
+    /* Inclui o padding no cálculo da largura */
 }
 
 /* Estilo do título */
@@ -301,12 +310,16 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     color: white;
-    text-align: left; /* Alinha os itens à esquerda */
-    margin-top: 20px; /* Espaço entre o título e o texto */
+    text-align: left;
+    /* Alinha os itens à esquerda */
+    margin-top: 20px;
+    /* Espaço entre o título e o texto */
     padding: 10px;
     overflow: visible;
-    display: grid; /* Aplicando o grid */
-    gap: 20px; /* Espaçamento entre os itens */
+    display: grid;
+    /* Aplicando o grid */
+    gap: 20px;
+    /* Espaçamento entre os itens */
 }
 
 /* Bullet points em vermelho */
@@ -315,7 +328,8 @@ body {
     padding-left: 20px;
     margin: 0;
     color: white;
-    text-align: left; /* Garante que os itens da lista fiquem à esquerda */
+    text-align: left;
+    /* Garante que os itens da lista fiquem à esquerda */
 }
 
 .text-overlay li {
@@ -326,7 +340,8 @@ body {
 }
 
 .text-overlay li::marker {
-    color: red; /* Bullet points vermelhas */
+    color: red;
+    /* Bullet points vermelhas */
     font-size: 1.2em;
 }
 
@@ -355,7 +370,8 @@ body {
     margin: 20px auto;
     padding: 0 20px;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
+    justify-content: center;
+    /* Centraliza horizontalmente */
 }
 
 .mySwiper2 img {
@@ -391,6 +407,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
     /* Remover miniaturas no mobile */
     .mySwiper2 {
         display: none;
@@ -398,12 +415,15 @@ body {
 
     /* Ajustar a altura e o layout do swiper principal */
     .mySwiper {
-        height: auto; /* Altura adaptativa */
-        padding: 0 10px; /* Ajuste no padding */
+        height: auto;
+        /* Altura adaptativa */
+        padding: 0 10px;
+        /* Ajuste no padding */
     }
 
     .image-container {
-        height: auto; /* Permitir que o container se ajuste ao conteúdo */
+        height: auto;
+        /* Permitir que o container se ajuste ao conteúdo */
     }
 
     .text-overlay {
@@ -411,9 +431,11 @@ body {
         max-width: 100%;
         padding: 20px;
         background-color: rgba(0, 0, 0, 0.7);
-        overflow: visible; /* Garantir que o texto não seja cortado */
+        overflow: visible;
+        /* Garantir que o texto não seja cortado */
         position: relative;
-        text-align: center; /* Alinha o texto ao centro no mobile */
+        text-align: center;
+        /* Alinha o texto ao centro no mobile */
         margin-top: 20px;
     }
 
@@ -427,30 +449,38 @@ body {
         line-height: 1.5;
         padding-left: 20px;
         padding-right: 20px;
-        text-align: left; /* Alinha o texto ao lado esquerdo */
-        word-wrap: break-word; /* Quebra de palavras longas para evitar corte */
-        white-space: normal; /* Permite a quebra de linhas */
-        display: block; /* Remove o grid no mobile */
+        text-align: left;
+        /* Alinha o texto ao lado esquerdo */
+        word-wrap: break-word;
+        /* Quebra de palavras longas para evitar corte */
+        white-space: normal;
+        /* Permite a quebra de linhas */
+        display: block;
+        /* Remove o grid no mobile */
     }
 
     .image-container img {
         object-fit: cover;
         width: 100%;
-        height: auto; /* Mostrar a imagem completa */
+        height: auto;
+        /* Mostrar a imagem completa */
     }
 }
 
 /* Ajuste de grid para listas longas em telas maiores */
 @media (min-width: 1024px) {
+
     /* Quando o conteúdo for muito longo, será dividido em 2 colunas */
     .text-overlay .text-content.long-text {
-        column-count: 2; /* Exibe o texto em 2 colunas */
+        column-count: 2;
+        /* Exibe o texto em 2 colunas */
         column-gap: 20px;
     }
-    
+
     /* Quando o conteúdo for curto, não aplicamos grid */
     .text-overlay .text-content:not(.long-text) {
-        column-count: 1; /* Exibe o texto em 1 coluna */
+        column-count: 1;
+        /* Exibe o texto em 1 coluna */
     }
 }
 
@@ -462,7 +492,8 @@ body {
 .section-4 {
     margin: 0;
     overflow: hidden;
-    background-color: rgba(119, 117, 117, .6117647059)
+    background-color: rgba(119, 117, 117, .6117647059);
+    
 }
 
 .card-wrapper {
@@ -520,17 +551,20 @@ body {
     color: #f0f0f0;
     font-size: 16px;
     padding: 20px 0
+
 }
 
 .footer .container {
     max-width: 1200px;
-    margin: auto
+    margin: 0 auto; /* Corrigido para garantir centralização */
 }
 
 .footer .footer-title {
     font-weight: bold;
-    color: #fff
+    color: #fff;
+    text-align: center; /* Centraliza o título no rodapé */
 }
+
 
 .footer .form-control {
     background-color: #444;
