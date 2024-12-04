@@ -11,9 +11,9 @@
     "firebase": "^10.14.1"
   },
   "devDependencies": {
-    "gulp": "^5.0.0",
+    "gulp": "^5.1.1",
     "gulp-plumber": "^1.2.1",
-    "gulp-sass": "^5.1.0",
-    "sass": "^1.80.5"
+    "gulp-sass": "^5.1.1",
+    "sass": "^1.80.6"
   }
 }
