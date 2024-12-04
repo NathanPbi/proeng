@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap";
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -126,7 +127,8 @@ html, body {
   width: 100%;
 }
 
-.line-with-icon::before, .line-with-icon::after {
+.line-with-icon::before,
+.line-with-icon::after {
   content: "";
   flex: 1;
   height: 2px;
@@ -345,24 +347,30 @@ html, body {
 }
 
 .mySwiper2 .swiper-slide {
-  width: 100%;
-  max-width: 300px; /* Largura fixa para uniformizar */
-  height: 200px; /* Altura fixa */
+  width: auto;
+  max-width: 300px;
+  /* Largura fixa para uniformizar */
+  height: 200px;
+  /* Altura fixa */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
   border-radius: 10px;
-  background: #f5f5f5; /* Cor de fundo */
+  background: #f5f5f5;
+  /* Cor de fundo */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0; /* Impede cards menores */
+  flex-shrink: 0;
+  /* Impede cards menores */
 }
 
 .mySwiper2 img {
   width: 100%;
-  height: auto; /* Altura igual ao contêiner do card */
-  object-fit: cover; /* Garante o preenchimento proporcional */
+  height: auto;
+  /* Altura igual ao contêiner do card */
+  object-fit: cover;
+  /* Garante o preenchimento proporcional */
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
@@ -521,19 +529,6 @@ html, body {
     font-size: 1rem;
   }
 }
-@media screen and (max-width: 768px) {
-  .services-prestados {
-    position: static;
-    margin: 15px auto;
-    width: 90%;
-    text-align: center;
-    background: linear-gradient(135deg, rgba(50, 50, 50, 0.9), rgba(0, 0, 0, 0.8));
-    padding: 20px;
-  }
-  .services-prestados h3 {
-    font-size: 1.1rem;
-  }
-}
 @media (min-width: 1024px) {
   .text-overlay .text-content.long-text {
     column-count: 2;
@@ -595,25 +590,30 @@ html, body {
     transform: translateX(-100%);
   }
 }
+/* Footer Geral */
 .footer {
   background-color: #8c8888;
   color: #f0f0f0;
   font-size: 16px;
   padding: 20px 0;
+  width: 100%;
+  /* O footer ocupa toda a largura da tela */
+  position: relative;
+  display: block;
 }
 
-.footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
+/* Título do Footer */
 .footer .footer-title {
   font-weight: bold;
-  color: #fff;
+  font-size: 25px;
+  color: rgba(21, 20, 20, 0.4549019608);
   text-align: center;
 }
 
+/* Formulário de Contato */
 .footer .form-control {
+  width: 100%;
+  /* Ocupa toda a largura disponível */
   background-color: #444;
   color: #fff;
   border: none;
@@ -621,53 +621,281 @@ html, body {
   padding: 10px;
 }
 
-.footer .form-control::placeholder {
-  color: #ccc;
+/* Corrigindo o estilo dos e-mails */
+.footer a {
+  color: #dcdcdc;
+  /* Cor suave para links */
+  text-decoration: none;
+  /* Remove o sublinhado */
 }
 
-.footer .btn-primary {
-  background-color: #202021;
-  border: none;
-  transition: background-color 0.3s;
+.footer a:hover {
+  color: #fff;
+  /* Cor ao passar o mouse */
 }
 
-.footer .btn-primary:hover {
-  background-color: #555252;
-}
-
+/* Mapa container */
 .map-container {
+  width: 100%;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.navFooter {
-  display: flex;
-  justify-content: center;
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  /* O footer ocupa toda a área lateral e para baixo no mobile */
+  .footer {
+    width: 100%;
+  }
+  .footer .footer-title {
+    font-size: 18px;
+    color: #fff;
+  }
+  .footer .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .footer .btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .footer .btn-primary:hover {
+    background-color: #555252;
+  }
+  .map-container {
+    width: 100%;
+    height: 200px;
+    /* Ajuste da altura no mobile */
+  }
+  .navFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .item-menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+  }
+  .item-menu li {
+    margin: 0;
+  }
+  .item-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  .item-menu a:hover {
+    color: #ccc;
+  }
+  .footer .text-center {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Desktop - Footer ocupa toda a largura e mantém o conteúdo centralizado */
+@media (min-width: 769px) {
+  .footer .container {
+    max-width: 1200px;
+    /* Limita a largura do conteúdo */
+    margin: 0 auto;
+    /* Centraliza o conteúdo */
+  }
+  .footer {
+    padding: 40px 0;
+    /* Maior espaçamento para desktop */
+  }
+  .navFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+  .item-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+  }
+  .item-menu a {
+    font-size: 16px;
+    /* Ajuste de tamanho para desktop */
+  }
+  /* Direitos autorais */
+  .footer .copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #5e5b5b;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+  }
+}
+/* Footer Geral */
+.footer {
+  background-color: #8c8888;
+  color: #f0f0f0;
+  font-size: 16px;
   padding: 20px 0;
+  width: 100%;
+  position: relative;
+  display: block;
 }
 
-.item-menu {
-  display: flex;
-  padding: 0;
-  list-style: none;
-  flex-wrap: wrap;
-  gap: 15px;
+/* Título do Footer */
+.footer .footer-title {
+  font-weight: bold;
+  font-size: 25px;
+  color: rgba(21, 20, 20, 0.4549019608);
+  text-align: center;
+  margin-bottom: 30px;
+  /* Adiciona um afastamento entre o título e os itens */
 }
 
-.item-menu li {
-  margin: 0;
-}
-
-.item-menu a {
-  text-decoration: none;
-  color: #555252;
-  transition: color 0.3s ease;
-}
-
-.item-menu a:hover {
+/* Formulário de Contato */
+.footer .form-control {
+  width: 100%;
+  background-color: #444;
   color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
 }
 
+/* Corrigindo o estilo dos e-mails */
+.footer a {
+  color: #dcdcdc;
+  /* Cor suave para links */
+  text-decoration: none;
+  /* Remove o sublinhado */
+}
+
+.footer a:hover {
+  color: #fff;
+  /* Cor ao passar o mouse */
+}
+
+/* Mapa container */
+.map-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  /* O footer ocupa toda a área lateral e para baixo no mobile */
+  .footer {
+    width: 100%;
+  }
+  .footer .footer-title {
+    font-size: 18px;
+    color: #fff;
+  }
+  .footer .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .footer .btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .footer .btn-primary:hover {
+    background-color: #555252;
+  }
+  .map-container {
+    width: 100%;
+    height: 200px;
+    /* Ajuste da altura no mobile */
+  }
+  .navFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .item-menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+  }
+  .item-menu li {
+    margin: 0;
+  }
+  .item-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  .item-menu a:hover {
+    color: #ccc;
+  }
+  .footer .text-center {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Desktop - Footer ocupa toda a largura e mantém o conteúdo centralizado */
+@media (min-width: 769px) {
+  .footer .container {
+    max-width: 1200px;
+    /* Limita a largura do conteúdo */
+    margin: 0 auto;
+    /* Centraliza o conteúdo */
+  }
+  .footer {
+    padding: 40px 0;
+    /* Maior espaçamento para desktop */
+  }
+  .navFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+  .item-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+  }
+  .item-menu a {
+    font-size: 16px;
+    /* Ajuste de tamanho para desktop */
+  }
+  /* Afastamento do título para os elementos */
+  .footer .row {
+    margin-bottom: 40px;
+    /* Afastando os itens de contato do título */
+  }
+  .footer .text-center {
+    width: 100%;
+    text-align: center;
+  }
+}
 :root {
   --icon-color: #fff;
   --icon-hover: #fff;
@@ -720,14 +948,6 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    overscroll-behavior: contain;
-  }
   .logo {
     display: flex;
     justify-content: center;
@@ -740,7 +960,8 @@ html, body {
     z-index: 1000;
   }
   .section-1 {
-    height: 250px;
+    bottom: 60px;
+    height: 380px;
   }
   .header {
     display: flex;
@@ -753,7 +974,7 @@ html, body {
     width: 100%;
     z-index: 1000;
     padding: 17px;
-    max-height: 170px;
+    max-height: 560px;
   }
   .text-headline.overlay-text {
     position: relative;
@@ -823,55 +1044,164 @@ html, body {
       transform: translateX(-1000%);
     }
   }
-  .mySwiper {
-    height: 60vh;
-    padding: 0 20px;
+}
+@media (max-width: 768px) and (max-width: 576px) {
+  /* Para garantir que o swiper fique no topo */
+  .swiper-container {
+    display: block; /* Exibe o swiper como um bloco */
+    width: 100%; /* O swiper ocupa toda a largura disponível */
+    margin-bottom: 20px; /* Espaçamento entre o swiper e o conteúdo abaixo */
   }
-  .text-overlay {
-    width: 85%;
+  /* Para cada slide, ajustamos para que fiquem em uma coluna */
+  .swiper-slide {
+    display: block;
+    width: 100%; /* Garante que os slides ocupem toda a largura */
+    margin-bottom: 15px; /* Espaçamento entre os slides */
+  }
+  /* Para garantir que os serviços prestados fiquem abaixo do swiper */
+  .services-prestados {
+    display: block; /* Exibe como um bloco abaixo do swiper */
+    width: 100%; /* Ocupa toda a largura disponível */
+    margin-top: 70px; /* Espaço entre o swiper e os serviços prestados */
+    padding: 15px;
+  }
+  /* Ajuste de título no overlay */
+  .text-overlay h2 {
+    font-size: 16px; /* Tamanho de fonte adequado para o mobile */
+    margin-bottom: 10px; /* Espaçamento entre o título e o conteúdo abaixo */
+  }
+  /* Ajuste nas listas de serviços */
+  .text-overlay ul,
+  .services-prestados ul {
+    font-size: 10px; /* Fonte menor para o mobile */
+    margin-bottom: 10px;
+  }
+  /* Ajustes no container de imagem */
+  .image-container {
+    width: 100%;
+    min-height: 450px; /* Garantir que o card tenha altura suficiente */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     padding: 10px;
   }
-  .text-overlay h2 {
-    font-size: 1rem;
-    line-height: 1.2;
-    margin-bottom: 5px;
+  /* Ajuste de imagens para garantir que não distorçam */
+  .image-container img {
+    width: 100%;
+    height: auto;
   }
-  .text-overlay p {
-    font-size: 0.8rem;
-    line-height: 1.3;
-    text-align: justify;
-    margin: 0;
+  /* Overlay de texto dentro da imagem */
+  .text-overlay {
+    padding: 15px;
+    width: 100%;
+    max-height: 50%; /* Limita a altura do overlay */
+    overflow-y: auto; /* Adiciona rolagem se necessário */
   }
+  /* Esconde as miniaturas do swiper no mobile */
   .mySwiper2 {
-    display: none;
+    display: none !important; /* Não exibe o swiper2 no mobile */
   }
+}
+@media (max-width: 768px) {
   .section-4 {
     margin: 0;
+  }
+  .footer {
+    background-color: #8c8888;
+    color: #f0f0f0;
+    padding: 20px 15px;
+    /* Garante que o footer ocupe toda a lateral */
+    font-size: 14px;
+    text-align: center;
+    /* Centraliza o texto */
+  }
+  .footer .container {
+    flex-direction: column;
+    /* Coloca tudo em coluna */
+    align-items: center;
+    /* Centraliza os itens */
+    gap: 20px;
+    /* Espaço entre as seções */
+    width: 100%;
+    /* Garante que ocupa toda a largura */
+  }
+  .footer .footer-title {
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+    /* Espaçamento abaixo do título */
+  }
+  .footer .form {
+    width: 100%;
+  }
+  .footer .form-control {
+    width: 100%;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .footer .form-control::placeholder {
+    color: #ccc;
+  }
+  .footer .btn-primary {
+    width: 100%;
+    background-color: #202021;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .footer .btn-primary:hover {
+    background-color: #555252;
+  }
+  .map-container {
+    width: 100%;
+    /* Garante que o mapa ocupe toda a largura */
+    border-radius: 8px;
+    overflow: hidden;
   }
   .navFooter {
     display: flex;
     justify-content: center;
-    padding: 10px;
+    /* Centraliza os links */
+    flex-wrap: wrap;
+    /* Permite que os links quebrem linha */
+    gap: 10px;
+    /* Espaço entre os itens */
+    width: 100%;
+    /* O menu ocupa toda a largura */
+    margin-top: 20px;
   }
   .item-menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    /* Links empilhados */
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    /* Centraliza os itens */
   }
   .item-menu li {
-    margin: 0 10px;
+    margin: 0;
   }
   .item-menu a {
-    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
   }
-  .mission-card:hover, .vision-card:hover, .values-card:hover {
-    background-color: #444;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  .header h1, .header p {
-    text-align: center;
-    font-size: 1rem;
+  .item-menu a:hover {
+    color: #ccc;
   }
   .section-4 {
     padding: 0 10px;
