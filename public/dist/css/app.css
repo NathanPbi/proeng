@@ -349,9 +349,7 @@ body {
 .mySwiper2 .swiper-slide {
   width: auto;
   max-width: 300px;
-  /* Largura fixa para uniformizar */
   height: 200px;
-  /* Altura fixa */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -359,18 +357,14 @@ body {
   overflow: hidden;
   border-radius: 10px;
   background: #f5f5f5;
-  /* Cor de fundo */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
-  /* Impede cards menores */
 }
 
 .mySwiper2 img {
   width: 100%;
   height: auto;
-  /* Altura igual ao contêiner do card */
   object-fit: cover;
-  /* Garante o preenchimento proporcional */
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
@@ -428,40 +422,6 @@ body {
     width: calc(100% - 32px);
     z-index: 10;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .services-prestados .container {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .services-prestados h3 {
-    font-size: 1.1rem;
-    text-align: center;
-    font-weight: bold;
-    color: #fc0;
-    margin-bottom: 12px;
-  }
-  .services-prestados ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .services-prestados ul li {
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 0.9rem;
-  }
-  .services-prestados ul li:before {
-    content: "•";
-    color: #fc0;
-    font-size: 1.2rem;
-    margin-right: 4px;
-  }
-  .services-prestados:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   }
 }
 .services-prestados {
@@ -597,38 +557,35 @@ body {
   font-size: 16px;
   padding: 20px 0;
   width: 100%;
-  /* O footer ocupa toda a largura da tela */
   position: relative;
   display: block;
 }
 
-/* Remove a decoração de texto (sublinhado) */
 .redes a {
   text-decoration: none;
-  font-size: 2rem; /* Ajusta o tamanho dos ícones */
-  color: #333; /* Cor dos ícones (pode ser personalizada) */
+  font-size: 2rem;
+  color: #333;
 }
 
 .redes ul {
-  list-style-type: none; /* Remove os marcadores de lista */
-  padding: 0; /* Remove o padding padrão do <ul> */
-  display: flex; /* Alinha os itens horizontalmente */
-  align-items: center; /* Alinha verticalmente no centro */
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .redes ul li {
   display: inline-flex;
   align-items: center;
-  margin-right: 15px; /* Espaço entre os ícones */
+  margin-right: 15px;
 }
 
 .redes ul li.separator {
-  margin: 0 10px; /* Espaço entre os ícones e o separador */
-  font-size: 1.5em; /* Ajusta o tamanho do separador */
-  color: #888; /* Cor do separador */
+  margin: 0 10px;
+  font-size: 1.5em;
+  color: #888;
 }
 
-/* Título do Footer */
 .footer .footer-title {
   font-weight: bold;
   font-size: 25px;
@@ -636,10 +593,8 @@ body {
   text-align: center;
 }
 
-/* Formulário de Contato */
 .footer .form-control {
   width: 100%;
-  /* Ocupa toda a largura disponível */
   background-color: #444;
   color: #fff;
   border: none;
@@ -647,33 +602,26 @@ body {
   padding: 10px;
 }
 
-/* Corrigindo o estilo dos e-mails */
 .footer a {
   color: #dcdcdc;
-  /* Cor suave para links */
   text-decoration: none;
-  /* Remove o sublinhado */
 }
 
 .footer a:hover {
   color: #fff;
-  /* Cor ao passar o mouse */
 }
 
-/* Mapa container */
 .map-container {
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
 }
 
-/* Responsividade para mobile */
 @media (max-width: 768px) {
   .footer {
     padding: 20px 0;
     font-size: 14px;
   }
-  /* O footer ocupa toda a área lateral e para baixo no mobile */
   .footer {
     width: 100%;
   }
@@ -696,7 +644,6 @@ body {
   .map-container {
     width: 100%;
     height: 200px;
-    /* Ajuste da altura no mobile */
   }
   .navFooter {
     display: flex;
@@ -729,17 +676,13 @@ body {
     text-align: center;
   }
 }
-/* Desktop - Footer ocupa toda a largura e mantém o conteúdo centralizado */
 @media (min-width: 769px) {
   .footer .container {
     max-width: 1200px;
-    /* Limita a largura do conteúdo */
     margin: 0 auto;
-    /* Centraliza o conteúdo */
   }
   .footer {
     padding: 40px 0;
-    /* Maior espaçamento para desktop */
   }
   .navFooter {
     display: flex;
@@ -757,9 +700,7 @@ body {
   }
   .item-menu a {
     font-size: 16px;
-    /* Ajuste de tamanho para desktop */
   }
-  /* Direitos autorais */
   .footer .copyright {
     text-align: center;
     font-size: 14px;
@@ -769,7 +710,6 @@ body {
     border-top: 1px solid #ccc;
   }
 }
-/* Footer Geral */
 .footer {
   background-color: #8c8888;
   color: #f0f0f0;
@@ -780,17 +720,14 @@ body {
   display: block;
 }
 
-/* Título do Footer */
 .footer .footer-title {
   font-weight: bold;
   font-size: 25px;
   color: rgba(21, 20, 20, 0.4549019608);
   text-align: center;
   margin-bottom: 30px;
-  /* Adiciona um afastamento entre o título e os itens */
 }
 
-/* Formulário de Contato */
 .footer .form-control {
   width: 100%;
   background-color: #444;
@@ -800,33 +737,26 @@ body {
   padding: 10px;
 }
 
-/* Corrigindo o estilo dos e-mails */
 .footer a {
   color: #dcdcdc;
-  /* Cor suave para links */
   text-decoration: none;
-  /* Remove o sublinhado */
 }
 
 .footer a:hover {
   color: #fff;
-  /* Cor ao passar o mouse */
 }
 
-/* Mapa container */
 .map-container {
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
 }
 
-/* Responsividade para mobile */
 @media (max-width: 768px) {
   .footer {
     padding: 20px 0;
     font-size: 14px;
   }
-  /* O footer ocupa toda a área lateral e para baixo no mobile */
   .footer {
     width: 100%;
   }
@@ -849,7 +779,6 @@ body {
   .map-container {
     width: 100%;
     height: 200px;
-    /* Ajuste da altura no mobile */
   }
   .navFooter {
     display: flex;
@@ -882,17 +811,13 @@ body {
     text-align: center;
   }
 }
-/* Desktop - Footer ocupa toda a largura e mantém o conteúdo centralizado */
 @media (min-width: 769px) {
   .footer .container {
     max-width: 1200px;
-    /* Limita a largura do conteúdo */
     margin: 0 auto;
-    /* Centraliza o conteúdo */
   }
   .footer {
     padding: 40px 0;
-    /* Maior espaçamento para desktop */
   }
   .navFooter {
     display: flex;
@@ -910,12 +835,9 @@ body {
   }
   .item-menu a {
     font-size: 16px;
-    /* Ajuste de tamanho para desktop */
   }
-  /* Afastamento do título para os elementos */
   .footer .row {
     margin-bottom: 40px;
-    /* Afastando os itens de contato do título */
   }
   .footer .text-center {
     width: 100%;
@@ -1080,60 +1002,51 @@ body {
   }
 }
 @media (max-width: 768px) and (max-width: 576px) {
-  /* Para garantir que o swiper fique no topo */
   .swiper-container {
-    display: block; /* Exibe o swiper como um bloco */
-    width: 100%; /* O swiper ocupa toda a largura disponível */
-    margin-bottom: 20px; /* Espaçamento entre o swiper e o conteúdo abaixo */
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
   }
-  /* Para cada slide, ajustamos para que fiquem em uma coluna */
   .swiper-slide {
     display: block;
-    width: 100%; /* Garante que os slides ocupem toda a largura */
-    margin-bottom: 15px; /* Espaçamento entre os slides */
+    width: 100%;
+    margin-bottom: 15px;
   }
-  /* Para garantir que os serviços prestados fiquem abaixo do swiper */
   .services-prestados {
-    display: block; /* Exibe como um bloco abaixo do swiper */
-    width: 100%; /* Ocupa toda a largura disponível */
-    margin-top: 70px; /* Espaço entre o swiper e os serviços prestados */
+    display: block;
+    width: 100%;
+    margin-top: 70px;
     padding: 15px;
   }
-  /* Ajuste de título no overlay */
   .text-overlay h2 {
-    font-size: 16px; /* Tamanho de fonte adequado para o mobile */
-    margin-bottom: 10px; /* Espaçamento entre o título e o conteúdo abaixo */
-  }
-  /* Ajuste nas listas de serviços */
-  .text-overlay ul,
-  .services-prestados ul {
-    font-size: 10px; /* Fonte menor para o mobile */
+    font-size: 16px;
     margin-bottom: 10px;
   }
-  /* Ajustes no container de imagem */
+  .text-overlay ul,
+  .services-prestados ul {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
   .image-container {
     width: 100%;
-    min-height: 450px; /* Garantir que o card tenha altura suficiente */
+    min-height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding: 10px;
   }
-  /* Ajuste de imagens para garantir que não distorçam */
   .image-container img {
     width: 100%;
     height: auto;
   }
-  /* Overlay de texto dentro da imagem */
   .text-overlay {
     padding: 15px;
     width: 100%;
-    max-height: 50%; /* Limita a altura do overlay */
-    overflow-y: auto; /* Adiciona rolagem se necessário */
+    max-height: 50%;
+    overflow-y: auto;
   }
-  /* Esconde as miniaturas do swiper no mobile */
   .mySwiper2 {
-    display: none !important; /* Não exibe o swiper2 no mobile */
+    display: none !important;
   }
 }
 @media (max-width: 768px) {
@@ -1144,27 +1057,20 @@ body {
     background-color: #8c8888;
     color: #f0f0f0;
     padding: 20px 15px;
-    /* Garante que o footer ocupe toda a lateral */
     font-size: 14px;
     text-align: center;
-    /* Centraliza o texto */
   }
   .footer .container {
     flex-direction: column;
-    /* Coloca tudo em coluna */
     align-items: center;
-    /* Centraliza os itens */
     gap: 20px;
-    /* Espaço entre as seções */
     width: 100%;
-    /* Garante que ocupa toda a largura */
   }
   .footer .footer-title {
     font-weight: bold;
     font-size: 18px;
     color: #fff;
     margin-bottom: 10px;
-    /* Espaçamento abaixo do título */
   }
   .footer .form {
     width: 100%;
@@ -1198,32 +1104,25 @@ body {
   }
   .map-container {
     width: 100%;
-    /* Garante que o mapa ocupe toda a largura */
     border-radius: 8px;
     overflow: hidden;
   }
   .navFooter {
     display: flex;
     justify-content: center;
-    /* Centraliza os links */
     flex-wrap: wrap;
-    /* Permite que os links quebrem linha */
     gap: 10px;
-    /* Espaço entre os itens */
     width: 100%;
-    /* O menu ocupa toda a largura */
     margin-top: 20px;
   }
   .item-menu {
     display: flex;
     flex-direction: column;
-    /* Links empilhados */
     list-style: none;
     padding: 0;
     gap: 10px;
     width: 100%;
     align-items: center;
-    /* Centraliza os itens */
   }
   .item-menu li {
     margin: 0;
