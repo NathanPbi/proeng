@@ -1,28 +1,12 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap");
-:root {
-  --primary-bg-color: #8c8888;
-  --primary-text-color: #f0f0f0;
-  --footer-title-color: #fff;
-  --form-bg-color: #444;
-  --btn-primary-bg: #555252;
-  --btn-primary-color: #fff;
-  --footer-padding: 20px;
-  --footer-font-size: 14px;
-}
-
+@import "https://fonts.googleapis.com/css2?family=Red+Rose:wght@300..700&display=swap";
+html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
+  width: 100%;
+  height: 100%;
+  overscroll-behavior: contain;
 }
 
 .main-container {
@@ -31,22 +15,30 @@ body {
 }
 
 .bg-danger {
-  color: #fff;
+  color: #fff !important;
   background: linear-gradient(135deg, #f18e8e, #f87575);
   border-radius: 5px;
   padding: 5px 10px;
   font-size: 0.7rem;
+  width: auto;
+  height: auto;
 }
 
 .header {
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   height: 120px;
-  background-color: transparent;
-  transition: background-color 0.3s ease;
+  width: 100%;
   z-index: 1000;
+}
+
+.logo {
+  margin: -48px;
+  max-height: 100%;
+  width: auto;
 }
 
 .header.scrolled {
@@ -57,18 +49,13 @@ body {
   color: #000;
 }
 
-.logo {
-  margin: -48px;
-  max-height: 100%;
-  width: auto;
-}
-
 .navbar {
+  bottom: 9px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: 0 20px;
-  bottom: 9px;
 }
 
 .navbar-nav {
@@ -81,7 +68,7 @@ body {
 }
 
 .navbar-light {
-  background-color: transparent !important;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .navbar-nav .nav-link {
@@ -90,6 +77,7 @@ body {
   color: #6a6868;
   text-decoration: none;
   transition: background 0.3s ease, color 0.3s ease;
+  border: none;
   margin: 0 10px;
 }
 
@@ -106,16 +94,16 @@ body {
 }
 
 .section-1 {
+  padding: 0;
+  text-align: center;
+  margin-top: 240px;
   position: relative;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 70vh;
-  padding: 0;
-  margin-top: 240px;
-  text-align: center;
   overflow: hidden;
+  width: 100%;
 }
 
 .section-1::before {
@@ -125,7 +113,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(118, 111, 111, 0.339), rgba(242, 237, 237, 0.5)), url("/dist/assets/img/headline.webp?v=1.1");
+  background-image: linear-gradient(rgba(118, 111, 111, 0.339), rgba(242, 237, 237, 0.5)), url("/dist/assets/img/headline.webp?v=1.1");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -181,14 +169,14 @@ body {
 }
 
 .section-2 h1 {
-  color: rgba(51, 49, 49, 0.443);
+  color: rgba(51, 49, 49, 0.4431372549);
   border-radius: 4.5px;
   margin: 0;
 }
 
 .section-2 p {
   color: #111010;
-  padding-bottom: 0;
+  padding-bottom: 0px;
 }
 
 .section-3 {
@@ -196,7 +184,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("/dist/assets/img/bg-media-tensao.jpg?v=1.1") center/cover no-repeat fixed;
+  background-image: url("/dist/assets/img/bg-media-tensao.jpg?v=1.1");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   top: 0;
   overflow: hidden;
   filter: brightness(1.5) contrast(1);
@@ -245,6 +237,7 @@ body {
 
 .image-container {
   position: relative;
+  width: auto;
   height: 100%;
   margin: 0 auto;
   border-radius: 15px;
@@ -305,12 +298,13 @@ body {
   text-align: left;
   margin-top: 20px;
   padding: 10px;
+  overflow: visible;
   display: grid;
   gap: 20px;
 }
 
 .text-overlay ul {
-  list-style: disc;
+  list-style-type: disc;
   padding-left: 20px;
   margin: 0;
   color: #fff;
@@ -353,8 +347,11 @@ body {
 }
 
 .mySwiper2 .swiper-slide {
+  width: auto;
   max-width: 300px;
+  /* Largura fixa para uniformizar */
   height: 200px;
+  /* Altura fixa */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -362,13 +359,18 @@ body {
   overflow: hidden;
   border-radius: 10px;
   background: #f5f5f5;
+  /* Cor de fundo */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   flex-shrink: 0;
+  /* Impede cards menores */
 }
 
 .mySwiper2 img {
   width: 100%;
+  height: auto;
+  /* Altura igual ao contêiner do card */
   object-fit: cover;
+  /* Garante o preenchimento proporcional */
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
@@ -382,13 +384,13 @@ body {
 .mySwiper2 .swiper-slide-thumb-active img {
   transform: scale(1.15);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  border: 2px solid transparent;
+  border: 2px solid rgba(0, 0, 0, 0);
 }
 
 .thumb-title {
   text-align: center;
   font-size: 1rem;
-  color: hsla(0, 0%, 100%, 0.99);
+  color: hsla(0, 0%, 100%, 0.9882352941);
   margin-top: 5px;
   padding: 5px 10px;
   background-color: rgba(19, 18, 18, 0.5);
@@ -396,6 +398,72 @@ body {
   text-shadow: 1px 1px 3px rgba(85, 83, 83, 0.7);
 }
 
+@media (max-width: 768px) {
+  .mySwiper {
+    height: auto;
+    padding: 0 16px;
+  }
+  .image-container {
+    height: auto;
+    max-height: 450px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .services-prestados {
+    position: relative;
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(60, 60, 60, 0.7));
+    color: #f7f7f7;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 auto 20px;
+    width: calc(100% - 32px);
+    z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .services-prestados .container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .services-prestados h3 {
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: bold;
+    color: #fc0;
+    margin-bottom: 12px;
+  }
+  .services-prestados ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .services-prestados ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+  .services-prestados ul li:before {
+    content: "•";
+    color: #fc0;
+    font-size: 1.2rem;
+    margin-right: 4px;
+  }
+  .services-prestados:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+}
 .services-prestados {
   position: absolute;
   right: 4%;
@@ -422,7 +490,7 @@ body {
   margin-bottom: 10px;
   text-align: center;
   font-weight: bold;
-  color: #a6a5a0 !important;
+  color: #a6a5a0;
 }
 
 .services-prestados ul {
@@ -436,16 +504,40 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-family: Arial, sans-serif;
 }
 
 .services-prestados ul li:before {
   content: "✔";
-  color: #64635f !important;
+  color: #64635f;
   font-size: 1rem;
-  font-family: "Arial", sans-serif;
 }
 
+@media screen and (max-width: 1366px) {
+  .mySwiper {
+    position: relative;
+    height: 50%;
+    width: 100%;
+  }
+  .services-prestados {
+    right: 2%;
+    bottom: 25%;
+    width: 27%;
+    font-size: 0.8rem;
+    padding: 9px;
+  }
+  .services-prestados h3 {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .text-overlay .text-content.long-text {
+    column-count: 2;
+    column-gap: 20px;
+  }
+  .text-overlay .text-content:not(.long-text) {
+    column-count: 1;
+  }
+}
 .section-4 {
   margin: 0;
   overflow: hidden;
@@ -505,35 +597,38 @@ body {
   font-size: 16px;
   padding: 20px 0;
   width: 100%;
+  /* O footer ocupa toda a largura da tela */
   position: relative;
   display: block;
 }
 
+/* Remove a decoração de texto (sublinhado) */
 .redes a {
   text-decoration: none;
-  font-size: 2rem;
-  color: #333;
+  font-size: 2rem; /* Ajusta o tamanho dos ícones */
+  color: #333; /* Cor dos ícones (pode ser personalizada) */
 }
 
 .redes ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
+  list-style-type: none; /* Remove os marcadores de lista */
+  padding: 0; /* Remove o padding padrão do <ul> */
+  display: flex; /* Alinha os itens horizontalmente */
+  align-items: center; /* Alinha verticalmente no centro */
 }
 
 .redes ul li {
   display: inline-flex;
   align-items: center;
-  margin-right: 15px;
+  margin-right: 15px; /* Espaço entre os ícones */
 }
 
 .redes ul li.separator {
-  margin: 0 10px;
-  font-size: 1.5em;
-  color: #888;
+  margin: 0 10px; /* Espaço entre os ícones e o separador */
+  font-size: 1.5em; /* Ajusta o tamanho do separador */
+  color: #888; /* Cor do separador */
 }
 
+/* Título do Footer */
 .footer .footer-title {
   font-weight: bold;
   font-size: 25px;
@@ -541,8 +636,10 @@ body {
   text-align: center;
 }
 
+/* Formulário de Contato */
 .footer .form-control {
   width: 100%;
+  /* Ocupa toda a largura disponível */
   background-color: #444;
   color: #fff;
   border: none;
@@ -550,103 +647,33 @@ body {
   padding: 10px;
 }
 
+/* Corrigindo o estilo dos e-mails */
 .footer a {
   color: #dcdcdc;
+  /* Cor suave para links */
   text-decoration: none;
+  /* Remove o sublinhado */
 }
 
 .footer a:hover {
   color: #fff;
+  /* Cor ao passar o mouse */
 }
 
+/* Mapa container */
 .map-container {
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .footer {
-    padding: 40px 0;
-  }
-  .navFooter {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
-  }
-  .item-menu {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    gap: 15px;
-  }
-  .item-menu a {
-    font-size: 16px;
-  }
-  .footer .copyright {
-    text-align: center;
-    font-size: 14px;
-    color: #5e5b5b;
-    margin-top: 20px;
-    padding-top: 10px;
-    border-top: 1px solid #ccc;
-  }
-}
-/* Footer Geral */
-.footer {
-  background-color: #8c8888;
-  color: #f0f0f0;
-  font-size: 16px;
-  padding: 20px 0;
-  width: 100%;
-  position: relative;
-  display: block;
-}
-
-.footer .footer-title {
-  font-weight: bold;
-  font-size: 25px;
-  color: rgba(21, 20, 20, 0.4549019608);
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.footer .form-control {
-  width: 100%;
-  background-color: #444;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 10px;
-}
-
-.footer a {
-  color: #dcdcdc;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: #fff;
-}
-
-.map-container {
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
+/* Responsividade para mobile */
 @media (max-width: 768px) {
   .footer {
     padding: 20px 0;
     font-size: 14px;
   }
+  /* O footer ocupa toda a área lateral e para baixo no mobile */
   .footer {
     width: 100%;
   }
@@ -669,6 +696,7 @@ body {
   .map-container {
     width: 100%;
     height: 200px;
+    /* Ajuste da altura no mobile */
   }
   .navFooter {
     display: flex;
@@ -701,13 +729,17 @@ body {
     text-align: center;
   }
 }
+/* Desktop - Footer ocupa toda a largura e mantém o conteúdo centralizado */
 @media (min-width: 769px) {
   .footer .container {
     max-width: 1200px;
+    /* Limita a largura do conteúdo */
     margin: 0 auto;
+    /* Centraliza o conteúdo */
   }
   .footer {
     padding: 40px 0;
+    /* Maior espaçamento para desktop */
   }
   .navFooter {
     display: flex;
@@ -725,9 +757,165 @@ body {
   }
   .item-menu a {
     font-size: 16px;
+    /* Ajuste de tamanho para desktop */
   }
+  /* Direitos autorais */
+  .footer .copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #5e5b5b;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+  }
+}
+/* Footer Geral */
+.footer {
+  background-color: #8c8888;
+  color: #f0f0f0;
+  font-size: 16px;
+  padding: 20px 0;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+/* Título do Footer */
+.footer .footer-title {
+  font-weight: bold;
+  font-size: 25px;
+  color: rgba(21, 20, 20, 0.4549019608);
+  text-align: center;
+  margin-bottom: 30px;
+  /* Adiciona um afastamento entre o título e os itens */
+}
+
+/* Formulário de Contato */
+.footer .form-control {
+  width: 100%;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+/* Corrigindo o estilo dos e-mails */
+.footer a {
+  color: #dcdcdc;
+  /* Cor suave para links */
+  text-decoration: none;
+  /* Remove o sublinhado */
+}
+
+.footer a:hover {
+  color: #fff;
+  /* Cor ao passar o mouse */
+}
+
+/* Mapa container */
+.map-container {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+    font-size: 14px;
+  }
+  /* O footer ocupa toda a área lateral e para baixo no mobile */
+  .footer {
+    width: 100%;
+  }
+  .footer .footer-title {
+    font-size: 18px;
+    color: #fff;
+  }
+  .footer .form-control {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .footer .btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .footer .btn-primary:hover {
+    background-color: #555252;
+  }
+  .map-container {
+    width: 100%;
+    height: 200px;
+    /* Ajuste da altura no mobile */
+  }
+  .navFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .item-menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+  }
+  .item-menu li {
+    margin: 0;
+  }
+  .item-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  .item-menu a:hover {
+    color: #ccc;
+  }
+  .footer .text-center {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Desktop - Footer ocupa toda a largura e mantém o conteúdo centralizado */
+@media (min-width: 769px) {
+  .footer .container {
+    max-width: 1200px;
+    /* Limita a largura do conteúdo */
+    margin: 0 auto;
+    /* Centraliza o conteúdo */
+  }
+  .footer {
+    padding: 40px 0;
+    /* Maior espaçamento para desktop */
+  }
+  .navFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+  .item-menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    gap: 15px;
+  }
+  .item-menu a {
+    font-size: 16px;
+    /* Ajuste de tamanho para desktop */
+  }
+  /* Afastamento do título para os elementos */
   .footer .row {
     margin-bottom: 40px;
+    /* Afastando os itens de contato do título */
   }
   .footer .text-center {
     width: 100%;
@@ -890,91 +1078,165 @@ body {
       transform: translateX(-1000%);
     }
   }
+}
+@media (max-width: 768px) and (max-width: 576px) {
+  /* Para garantir que o swiper fique no topo */
+  .swiper-container {
+    display: block; /* Exibe o swiper como um bloco */
+    width: 100%; /* O swiper ocupa toda a largura disponível */
+    margin-bottom: 20px; /* Espaçamento entre o swiper e o conteúdo abaixo */
+  }
+  /* Para cada slide, ajustamos para que fiquem em uma coluna */
+  .swiper-slide {
+    display: block;
+    width: 100%; /* Garante que os slides ocupem toda a largura */
+    margin-bottom: 15px; /* Espaçamento entre os slides */
+  }
+  /* Para garantir que os serviços prestados fiquem abaixo do swiper */
+  .services-prestados {
+    display: block; /* Exibe como um bloco abaixo do swiper */
+    width: 100%; /* Ocupa toda a largura disponível */
+    margin-top: 70px; /* Espaço entre o swiper e os serviços prestados */
+    padding: 15px;
+  }
+  /* Ajuste de título no overlay */
+  .text-overlay h2 {
+    font-size: 16px; /* Tamanho de fonte adequado para o mobile */
+    margin-bottom: 10px; /* Espaçamento entre o título e o conteúdo abaixo */
+  }
+  /* Ajuste nas listas de serviços */
+  .text-overlay ul,
+  .services-prestados ul {
+    font-size: 10px; /* Fonte menor para o mobile */
+    margin-bottom: 10px;
+  }
+  /* Ajustes no container de imagem */
+  .image-container {
+    width: 100%;
+    min-height: 450px; /* Garantir que o card tenha altura suficiente */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+  }
+  /* Ajuste de imagens para garantir que não distorçam */
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+  /* Overlay de texto dentro da imagem */
+  .text-overlay {
+    padding: 15px;
+    width: 100%;
+    max-height: 50%; /* Limita a altura do overlay */
+    overflow-y: auto; /* Adiciona rolagem se necessário */
+  }
+  /* Esconde as miniaturas do swiper no mobile */
+  .mySwiper2 {
+    display: none !important; /* Não exibe o swiper2 no mobile */
+  }
+}
+@media (max-width: 768px) {
   .section-4 {
     margin: 0;
   }
   .footer {
-    background-color: var(--primary-bg-color);
-    color: var(--primary-text-color);
-    padding: var(--footer-padding);
-    font-size: var(--footer-font-size);
+    background-color: #8c8888;
+    color: #f0f0f0;
+    padding: 20px 15px;
+    /* Garante que o footer ocupe toda a lateral */
+    font-size: 14px;
     text-align: center;
+    /* Centraliza o texto */
+  }
+  .footer .container {
+    flex-direction: column;
+    /* Coloca tudo em coluna */
+    align-items: center;
+    /* Centraliza os itens */
+    gap: 20px;
+    /* Espaço entre as seções */
     width: 100%;
+    /* Garante que ocupa toda a largura */
   }
   .footer .footer-title {
+    font-weight: bold;
     font-size: 18px;
-    color: var(--footer-title-color);
+    color: #fff;
     margin-bottom: 10px;
+    /* Espaçamento abaixo do título */
+  }
+  .footer .form {
+    width: 100%;
   }
   .footer .form-control {
     width: 100%;
-    background-color: var(--form-bg-color);
+    background-color: #444;
     color: #fff;
     border: none;
+    border-radius: 4px;
     padding: 10px;
     margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .footer .form-control::placeholder {
+    color: #ccc;
   }
   .footer .btn-primary {
-    background-color: var(--btn-primary-bg);
-    color: var(--btn-primary-color);
+    width: 100%;
+    background-color: #202021;
     border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    padding: 10px;
+    color: #fff;
+    border-radius: 4px;
     font-size: 16px;
-    width: auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .footer .btn-primary:hover {
+    background-color: #555252;
+  }
+  .map-container {
+    width: 100%;
+    /* Garante que o mapa ocupe toda a largura */
+    border-radius: 8px;
+    overflow: hidden;
   }
   .navFooter {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    /* Centraliza os links */
     flex-wrap: wrap;
-    gap: 20px;
-  }
-  .navFooter a {
-    color: var(--primary-text-color);
-    text-decoration: none;
-  }
-  .navFooter a:hover {
-    text-decoration: underline;
-  }
-  @keyframes scroll-carousel {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  @keyframes scroll-carousel-mobile {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-}
-@media (max-width: 768px) and (max-width: 768px) {
-  .footer {
-    font-size: 14px;
-    padding: 15px;
-  }
-  .footer .footer-title {
-    font-size: 16px;
-  }
-  .footer .form-control {
-    width: 100%;
-  }
-  .footer .btn-primary {
-    width: 100%;
-    font-size: 14px;
-  }
-  .navFooter {
-    flex-direction: column;
-    align-items: center;
+    /* Permite que os links quebrem linha */
     gap: 10px;
+    /* Espaço entre os itens */
+    width: 100%;
+    /* O menu ocupa toda a largura */
+    margin-top: 20px;
   }
-}
-@media (max-width: 768px) {
+  .item-menu {
+    display: flex;
+    flex-direction: column;
+    /* Links empilhados */
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    /* Centraliza os itens */
+  }
+  .item-menu li {
+    margin: 0;
+  }
+  .item-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  .item-menu a:hover {
+    color: #ccc;
+  }
   .section-4 {
     padding: 0 10px;
     background-color: rgba(119, 117, 117, 0.6117647059);
