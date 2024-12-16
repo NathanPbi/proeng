@@ -119,21 +119,18 @@ body {
 }
 
 .section-1::before {
-    content: "";
-    position: fixed;
-    top: 120px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(236, 232, 232, 0.339), rgba(242, 237, 237, 0.5)), url("/dist/assets/img/serv/media-tensao.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -9;
-
-    transform-origin: center; 
-  }
-  
+  content: "";
+  position: fixed;
+  top: 120px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(118, 111, 111, 0.339), rgba(242, 237, 237, 0.5)), url("/dist/assets/img/headline.webp?v=1.1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
 
 .line-with-icon {
   display: flex;
@@ -234,96 +231,96 @@ body {
 }
 
 .mySwiper {
-    width: 100%;
-    height: auto; /* A altura agora será automática para se ajustar ao conteúdo */
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Alinha ao topo para evitar o corte no centro */
-    box-sizing: border-box;
-    min-height: 300px; /* Garante uma altura mínima para telas pequenas */
-  }
-  
-  .image-container {
-    position: relative;
-    width: 100%;
-    height: auto; /* A altura será ajustada automaticamente */
-    margin: 0 auto;
-    border-radius: 15px;
-    overflow: hidden;
-  }
-  
-  .image-container img {
-    width: 100%;
-    height: auto; /* Imagem será proporcional ao tamanho do contêiner */
-    object-fit: cover; /* Garante que a imagem se ajuste, sem distorcer */
-    transition: transform 0.3s ease;
-  }
-  
-  .image-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-    z-index: 1;
-    border-radius: 15px;
-  }
-  
-  .card-content {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    color: white;
-    font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  
-  .card-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #a6a5a0;
-  }
-  
-  .card-content p {
-    margin-bottom: 15px;
-  }
-  
-  @media (max-width: 768px) {
-    .mySwiper {
-      min-height: 350px; /* Ajusta a altura mínima para telas menores */
-    }
-  
-    .card-content {
-      padding: 15px; /* Ajuste de padding para telas menores */
-    }
-  }
-  
+  width: 100%;
+  height: auto; 
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  display: flex;
+  // justify-content: center;
+  // align-items: flex-start; 
+  box-sizing: border-box;
+  min-height: 300px; 
+}
 
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto; 
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto; 
+  object-fit: cover; 
+  transition: transform 0.3s ease;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+  border-radius: 15px;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  color: white;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #a6a5a0;
+}
+
+.card-content p {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .mySwiper {
+    min-height: 350px; /* Ajusta a altura mínima para telas menores */
+  }
+  .card-content {
+    padding: 15px; /* Ajuste de padding para telas menores */
+  }
+}
 .image-container img:hover {
   transform: scale(1.05);
 }
-
+.image-container-1 {
+  background-image: url('/dist/assets/img/serv/media-tensao.webp');
+  background-size: cover;
+}
 .text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 37%;
-  transform: translate(-50%, -50%);
+  // position: absolute;
+  // top: 50%;
+  // left: 37%;
+  // transform: translate(-50%, -50%);
   z-index: 2;
   color: #fff;
   text-align: center;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
-  width: 80%;
+  // width: 80%;
   max-width: 700px;
   animation: fadeIn 1s ease-in-out;
   box-sizing: border-box;
@@ -382,7 +379,6 @@ body {
     transform: translateX(-50%) translateY(-50%);
   }
 }
-
 .mySwiper2 {
   width: auto;
   height: 100%;
@@ -437,10 +433,15 @@ body {
 }
 
 .services-prestados {
-  position: absolute;
-  right: 4%;
-  bottom: 25%;
-  width: 25%;
+  // position: absolute;
+  // right: 4%;
+  // bottom: 25%;
+  // width: 25%;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.6));
   color: #fff;
   padding: 15px;
@@ -479,7 +480,7 @@ body {
 }
 
 .services-prestados ul li:before {
-  content: "✔";
+  // content: "✔";
   color: #64635f !important;
   font-size: 1rem;
 }

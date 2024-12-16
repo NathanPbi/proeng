@@ -125,12 +125,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(236, 232, 232, 0.339), rgba(242, 237, 237, 0.5)), url("/dist/assets/img/serv/media-tensao.webp");
+  background: linear-gradient(rgba(118, 111, 111, 0.339), rgba(242, 237, 237, 0.5)), url("/dist/assets/img/headline.webp?v=1.1");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: -9;
-  transform-origin: center;
+  z-index: -1;
 }
 
 .line-with-icon {
@@ -233,22 +232,19 @@ body {
 
 .mySwiper {
   width: 100%;
-  height: auto; /* A altura agora será automática para se ajustar ao conteúdo */
+  height: auto;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Alinha ao topo para evitar o corte no centro */
   box-sizing: border-box;
-  min-height: 300px; /* Garante uma altura mínima para telas pequenas */
+  min-height: 300px;
 }
 
 .image-container {
   position: relative;
   width: 100%;
-  height: auto; /* A altura será ajustada automaticamente */
+  height: auto;
   margin: 0 auto;
   border-radius: 15px;
   overflow: hidden;
@@ -256,8 +252,8 @@ body {
 
 .image-container img {
   width: 100%;
-  height: auto; /* Imagem será proporcional ao tamanho do contêiner */
-  object-fit: cover; /* Garante que a imagem se ajuste, sem distorcer */
+  height: auto;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -307,18 +303,18 @@ body {
   transform: scale(1.05);
 }
 
+.image-container-1 {
+  background-image: url("/dist/assets/img/serv/media-tensao.webp");
+  background-size: cover;
+}
+
 .text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 37%;
-  transform: translate(-50%, -50%);
   z-index: 2;
   color: #fff;
   text-align: center;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
-  width: 80%;
   max-width: 700px;
   animation: fadeIn 1s ease-in-out;
   box-sizing: border-box;
@@ -431,10 +427,11 @@ body {
 }
 
 .services-prestados {
-  position: absolute;
-  right: 4%;
-  bottom: 25%;
-  width: 25%;
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.6));
   color: #fff;
   padding: 15px;
@@ -473,7 +470,6 @@ body {
 }
 
 .services-prestados ul li:before {
-  content: "✔";
   color: #64635f !important;
   font-size: 1rem;
 }
