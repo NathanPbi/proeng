@@ -233,7 +233,7 @@ body {
 
 .mySwiper {
   width: 100%;
-  height: 100%; /* Garante altura total do swiper */
+  height: auto;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -245,20 +245,17 @@ body {
 .image-container {
   position: relative;
   width: 100%;
-  height: 600px; /* Altura fixa para evitar redimensionamento */
+  height: auto; 
   margin: 0 auto;
   border-radius: 15px;
   overflow: hidden;
   background: #000; 
-  display: flex; /* Para centralizar conteúdo */
-  justify-content: center;
-  align-items: center;
 }
 
 .image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Garante preenchimento proporcional */
+  object-fit: contain; 
   transition: transform 0.3s ease;
 }
 
@@ -280,11 +277,11 @@ body {
   padding: 20px;
   color: white;
   font-size: 1rem;
-  text-align: center; /* Centraliza o texto no eixo horizontal */
-  max-width: 90%; /* Limita a largura do texto */
-  overflow-wrap: break-word; /* Quebra o texto para evitar overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-
 
 
 .card-content h3 {
@@ -300,13 +297,12 @@ body {
 @media (max-width: 768px) {
   .mySwiper {
     min-height: 350px;
+    /* Ajusta a altura mínima para telas menores */
   }
 
   .card-content {
     padding: 15px;
-  }
-  .image-container {
-    height: 300px; /* Altura reduzida para dispositivos menores */
+    /* Ajuste de padding para telas menores */
   }
 }
 
@@ -359,13 +355,17 @@ body {
 }
 
 .text-overlay {
-  /* Mantendo as propriedades comentadas que você listou */
+  // position: absolute;
+  // top: 50%;
+  // left: 37%;
+  // transform: translate(-50%, -50%);
   z-index: 2;
   color: #fff;
   text-align: center;
   padding: 20px;
-  background-color: rgba(12, 9, 9, 0.8); /* Aumentado para 0.8 (80% opaco) */
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+  // width: 80%;
   max-width: 700px;
   animation: fadeIn 1s ease-in-out;
   box-sizing: border-box;
@@ -405,7 +405,7 @@ body {
 }
 
 .text-overlay li::marker {
-  color: #73716b;
+  color: #64635f;
   font-size: 1.2em;
 }
 
@@ -489,7 +489,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.96), rgba(50, 50, 50, 0.6));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.6));
   color: #fff;
   padding: 15px;
   border-radius: 12px;
@@ -528,7 +528,7 @@ body {
 
 .services-prestados ul li:before {
   // content: "✔";
-  color: #cfcfcc !important;
+  color: #64635f !important;
   font-size: 1rem;
 }
 
@@ -656,7 +656,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  
   .footer .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -999,7 +998,6 @@ body {
     transform: none;
   }
 
-   
   @supports (-webkit-overflow-scrolling: touch) {
     .section-3 {
       background-attachment: scroll;
@@ -1146,133 +1144,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .mySwiper {
-    width: 100%;
-    height: auto; /* Permite que o swiper se ajuste ao conteúdo */
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 15px; /* Ajuste no padding lateral */
-    position: relative;
-    display: flex;
-    flex-direction: column; /* Organiza o conteúdo em coluna */
-    box-sizing: border-box;
-  }
-
-  .image-container {
-    position: relative;
-    width: 100%;
-    height: auto; /* A altura se ajusta conforme o conteúdo */
-    margin: 0 auto;
-    border-radius: 15px;
-    overflow: hidden;
-    background: #000;
-    display: flex; /* Para centralizar conteúdo */
-    justify-content: center;
-    align-items: center;
-  }
-
-  .image-container img {
-    width: 100%;
-    height: auto; /* Ajuste para imagem se adaptar à altura do container */
-    object-fit: cover; /* Preenchimento proporcional */
-    transition: transform 0.3s ease;
-  }
-
-  .image-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-    z-index: 1;
-    border-radius: 15px;
-  }
-
-  .card-content {
-    position: relative;
-    z-index: 2;
-    padding: 20px 10px; /* Ajuste do padding lateral */
-    color: white;
-    font-size: 1rem;
-    text-align: center;
-    width: 100%;
-    max-width: 90%; /* Limita a largura do texto */
-    overflow-wrap: break-word; /* Quebra o texto para evitar overflow */
-  }
-
-  .text-overlay {
-    z-index: 2;
-    color: #fff;
-    text-align: center;
-    padding: 20px 8%; /* Ajuste refinado no padding */
-    background-color: rgba(12, 9, 9, 0.9); /* Fundo escurecido */
-    border-radius: 10px;
-    width: 100%; /* Garantindo que o card ocupe toda a largura */
-    max-width: 100%;
-    margin: 20px auto; /* Ajuste de margens para centralização */
-    box-sizing: border-box;
-    height: auto;
-    display: block;
-    overflow: visible; /* Garante que nada é cortado */
-  }
-
-  .text-overlay h2 {
-    margin: 10px 0;
-    font-size: 1.2rem;
-    line-height: 1.4;
-    color: #a6a5a0 !important;
-  }
-
-  .text-overlay .text-content {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #fff;
-    text-align: justify;
-    margin-top: 10px;
-    display: grid;
-    gap: 15px;
-  }
-
-  .text-overlay ul {
-    list-style: disc;
-    padding-left: 20px;
-    margin: 0;
-    text-align: justify;
-  }
-
-  .text-overlay li {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 8px;
-  }
-
-  /* Ajustes para setas */
-  .swiper-button-prev,
-  .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-
-  .swiper-button-prev {
-    left: 10px;
-  }
-
-  .swiper-button-next {
-    right: 10px;
-  }
-
-  /* Esconde o swiper2 no mobile */
-  .mySwiper2 {
-    display: none;
-  }
-
-
   .section-4 {
     padding: 0 10px;
     background-color: rgba(119, 117, 117, 0.6117647059);
