@@ -1,0 +1,14 @@
+{
+    "hosting": {
+      "public": "public",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+      "redirects": [
+        {
+          "source": "https://proengsul.com.br/**",
+          "destination": "https://www.proengsul.com.br",
+          "type": 301
+        }
+      ]
+    }
+  }
+  
