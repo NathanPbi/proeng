@@ -947,8 +947,8 @@ body {
     z-index: 1000;
   }
   .section-1 {
-    bottom: 60px;
-    height: 380px;
+    bottom: 3.75rem; /* 60px */
+    height: 23.75rem; /* 380px */
   }
   .header {
     display: flex;
@@ -960,8 +960,8 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 17px;
-    max-height: 560px;
+    padding: 1.0625rem; /* 17px */
+    max-height: 35rem; /* 560px */
   }
   .text-headline.overlay-text {
     position: relative;
@@ -969,7 +969,7 @@ body {
     left: 50%;
     width: 90%;
     transform: translateX(-50%);
-    padding: 18px;
+    padding: 0.75rem; /* 12px */
     text-align: center;
   }
   .text-headline.overlay-text h1 {
@@ -977,11 +977,36 @@ body {
   }
   .text-headline.overlay-text p {
     font-size: 0.7rem;
-    margin: 7px;
+    margin: 0.4375rem; /* 7px */
   }
   .bg-danger {
-    padding: 2px 5px;
+    padding: 0.125rem 0.3125rem; /* 2px 5px */
   }
+  /* Media Queries para ajustes específicos em dispositivos Xiaomi */
+}
+@media only screen and (max-width: 768px) and (max-width: 360px) {
+  .text-headline.overlay-text h1 {
+    font-size: 1.1rem;
+  }
+  .text-headline.overlay-text p {
+    font-size: 0.6rem;
+  }
+  .header {
+    padding: 0.75rem; /* 12px */
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 361px) and (max-width: 480px) {
+  .text-headline.overlay-text h1 {
+    font-size: 1.2rem;
+  }
+  .text-headline.overlay-text p {
+    font-size: 0.73rem;
+  }
+  .header {
+    padding: 1rem; /* 16px */
+  }
+}
+@media (max-width: 768px) {
   .navbar-nav {
     background-color: rgba(230, 230, 230, 0.9);
     position: absolute;
