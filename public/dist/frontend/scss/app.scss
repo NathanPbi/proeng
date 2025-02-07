@@ -8,7 +8,9 @@ body {
   height: 100%;
   overscroll-behavior: contain;
 }
-
+.float {
+  animation: none; /* Remova temporariamente para teste */
+}
 .main-container {
   overflow-x: hidden;
   width: 100%;
@@ -222,20 +224,6 @@ body {
   margin-bottom: 100px;
 }
 
-@media (min-width: 768px) {
-  .mySwiper {
-    width: 100%;
-    height: 60vh;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-  }
-}
 
 
 @media (max-width: 767px) {
@@ -1099,7 +1087,7 @@ body {
       font-size: 18px;
     }
       padding: 15px;
-      background: linear-gradient(135deg, #ec3434, #f87575);
+      background: linear-gradient(135deg, #171717, #8c8888eb,  #727171eb);
       color: #fff;
       border-radius: 8px;
       cursor: pointer;
